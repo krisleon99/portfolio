@@ -367,7 +367,12 @@ form.bs-docs-example {
 
 
 /* progress bar */
-
+.bar.bar100 {
+	width:100%;
+}
+.bar.bar90 {
+	width:90%;
+}
 .bar.bar80 {
 	width:80%;
 }
