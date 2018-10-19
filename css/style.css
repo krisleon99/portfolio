@@ -581,7 +581,7 @@ section#featured  {
 }
 section#featured h2  {
 	color:#fff;
-	font-size:64px;
+	font-size:5vw;
 }
 
 section#featured .inner-heading h2 {
@@ -1179,7 +1179,7 @@ img.pull-left{
 
 
 .letter-container h2 span {
-	font-size: 64px;
+	font-size: :5vw;
 	text-transform:uppercase;
 	font-weight:400;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
