@@ -12,7 +12,7 @@
   <meta property="og:title"              content="Portfolio - Christian León Álvarez" />
   <meta property="og:description"        content="Portfolio's Christian León" />
   <meta property="og:image"              content="https://krisleon99.github.io/portfolio/img/sumaya.jpg" />
-  
+
   <!-- styles -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -27,10 +27,35 @@
 
   <!-- Fav and touch icons logo_icon-->
   <link rel="shortcut icon" href="ico/logo_icon.ico">
+  <script src="d3.v3.min.js"></script>
+  <style>
 
+  rect {
+    fill: none;
+    pointer-events: all;
+  }
+
+  circle {
+    fill: none;
+    stroke-width: 2.5px;
+  }
+  #featured{
+    position: relative;
+  }
+  #sequence-theme{
+    position: absolute;
+    top: 150px;
+    width: 100% !important;
+  }
+  #d3{
+    position: relative;
+    z-index: 1;
+  }
+  </style>
 </head>
 
 <body>
+
   <header>
 
     <!-- start top -->
@@ -60,7 +85,7 @@
 
   <!-- section featured -->
   <section id="featured">
-
+    <div id="d3"></div>
     <!-- sequence slider -->
     <div id="sequence-theme">
       <img class="prev" src="img/bt-prev.png" alt="Previous">
@@ -175,8 +200,8 @@
                 <div class="bar bar80">
                 </div>
               </div>
-            
-  		
+
+
               <label>PostgresSQL/SQL:</label>
               <div class="progress progress-striped progress-info active">
                 <div class="bar bar70">
@@ -290,7 +315,7 @@
  	    <li class="front"><a href="#" class="btn btn-color">Frontend</a></li>
 	    <li class="so"><a href="#" class="btn btn-color">Others</a></li>
           <li class="english"><a href="#" class="btn btn-color">English</a></li>
-  <!-- 
+  <!--
             <li class="bd"><a href="#" class="btn btn-color">BD</a></li>
             <li class="so"><a href="#" class="btn btn-color">SO</a></li>
             <li class="personal"><a href="#" class="btn btn-color">Personal</a></li>-->
@@ -485,7 +510,7 @@
                   You can delete the links only if you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Selecao
-                 
+
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
               </div>
             </div>
@@ -519,6 +544,122 @@
 
   <!-- Template Custom Javascript File -->
   <script src="js/custom.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+  <script>
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  doD3(w-20, h+50);
+  // let screen_1 = 1024,
+  //     screen_2 = 768,
+  //     screen_3 = 480,
+  //     screen_4 = 320,
+  //     screen_5 = 1024;
+  // const media1 = window.matchMedia('screen and (max-width: '+screen_1+'px)');
+  // const media2 = window.matchMedia('screen and (max-width: '+screen_2+'px)');
+  // const media3 = window.matchMedia('screen and (max-width: '+screen_3+'px)');
+  // const media4 = window.matchMedia('screen and (max-width: '+screen_4+'px)');
+  // const media5 = window.matchMedia('screen and (max-width: '+screen_5+'px)');
+  //
+  // console.log("ipad");
+  // media1.addListener(validate1)
+  // media2.addListener(validate2)
+  // media3.addListener(validate3)
+  // media4.addListener(validate4)
+  // media5.addListener(validate1)
+
+  function validate1(event){
+    if (event.matches) {
+      console.log("matches");
+      var width = 1024,
+      height = 950;
+    }else {
+      console.log("no matches");
+      var width = 1800,
+      height = 950;
+    }
+    console.log(event);
+    console.log("event");
+    doD3(width, height);
+  }
+  function validate2(event){
+    if (event.matches) {
+      console.log("matches");
+      var width = 768,
+      height = 950;
+    }else {
+      console.log("no matches");
+      var width = 1800,
+      height = 950;
+    }
+    console.log(event);
+    console.log("event");
+    doD3(width, height);
+  }
+ function validate3(event){
+      if (event.matches) {
+        console.log("matches");
+        var width = 480,
+        height = 950;
+      }else {
+        console.log("no matches");
+        var width = 1800,
+        height = 950;
+      }
+      console.log(event);
+      console.log("event");
+      doD3(width, height);
+    }
+    function validate4(event){
+      if (event.matches) {
+        console.log("matches");
+        var width = 320,
+        height = 950;
+      }else {
+        console.log("no matches");
+        var width = 1800,
+        height = 950;
+      }
+      console.log(event);
+      console.log("event");
+      doD3(width, height);
+    }
+
+function doD3(width, height){
+  console.log(width+"j"+height);
+  var i = 0;
+
+  var svg = d3.select("#d3").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+  svg.append("rect")
+  .attr("width", width)
+  .attr("height", height)
+  .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
+  function particle() {
+  var m = d3.mouse(this);
+
+  svg.insert("circle", "rect")
+    .attr("cx", m[0])
+    .attr("cy", m[1])
+    .attr("r", 1e-6)
+    .style("stroke", d3.hsl((i = (i + 1) % 360), 1, .5))
+    .style("stroke-opacity", 1)
+  .transition()
+    .duration(2000)
+    .ease(Math.sqrt)
+    .attr("r", 100)
+    .style("stroke-opacity", 1e-6)
+    .text("hola")
+    .remove();
+
+  d3.event.preventDefault();
+  }
+}
+
+
+
+  </script>
 
 </body>
 
