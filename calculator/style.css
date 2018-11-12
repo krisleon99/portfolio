@@ -1,0 +1,129 @@
+body {
+    background-color: #f3f3df;
+    margin:auto;
+    padding:20px;
+}
+
+hr{border:1px solid #EEE; }
+
+a{text-decoration:none;}
+    
+
+
+/*----------tap panel style------*/
+ .tab-panel {
+            width: 100%;
+            display: inline-block;
+        }
+
+        .tab-link:after {
+            display: block;
+            padding-top: 20px;
+            content: '';
+        }
+
+        .tab-link li {
+            margin: 0px 5px;
+            float: left;
+            list-style: none;
+        }
+
+        .tab-link a {
+            padding: 8px 15px;
+            display: inline-block;
+            border-radius: 10px 3px 0px 0px;
+            background: #8dc8f5;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .tab-link a:hover {
+            background: #b7c7e5;
+            text-decoration: none;
+        }
+
+        li.active a, li.active a:hover {
+            background: #ccc;
+            color: #0094ff;
+            text-decoration:none;
+        }
+
+        .content-area {
+            padding: 15px;
+            border-radius: 3px;
+            box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .inactive{
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+.zona, .coordinates{
+  display: none;
+}
+
+/*---------*/
+
+.subtitulos {
+    font-size: 13pt;
+    margin: 13pt auto;
+}
+
+.resultados_transf {
+    padding: 20px;
+    margin-top: 50px;
+    background: #F4F4F4;
+}
+
+.result1 {
+    background: #F4F4F4;
+    padding: 20px;
+    margin-top: 20px;
+    display: None;
+}
+
+.mapaUTM {
+    width:700px;
+    height:450px;
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    font-size: 25px;
+    background-color: #17A2B8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+@media (min-width: 993px) {
+
+    .img-responsive{
+        width:800px;
+        height:550px;
+        margin-top: 25px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    
+}
+
+
+.form-control {
+    margin: 10px auto;
+}
+
+.container {
+}

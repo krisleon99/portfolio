@@ -1,0 +1,996 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tranformación de coordenadas</title>
+  <meta name="description" content="Tranformación de coordenadas - UNAM">
+  <meta property="og:url"                content="https://www.unam.mx/index.html" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="Tranformación de coordenadas - UNAM" />
+  <meta property="og:description"        content="Tranformación de coordenadas - UNAM" />
+  <meta property="og:image"              content="https://www.unam.mx/images/cal.jpg" />
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="tabpanel.js"></script>
+ </head>
+ <body>
+   <div class="container">
+   <h1 class="main-title">Tranformación de coordenadas</h1>
+     <hr />
+     <div class="container">
+       <!-- <h2>Dynamic Tabs</h2> -->
+       <ul class="nav nav-tabs">
+         <li class="active"><a data-toggle="tab" href="#home">Universal Transversa de Mercator</a></li>
+       <!--  <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+         <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+         <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>-->
+       </ul>
+
+
+       <div class="tab-content">
+
+         <div id="home" class="tab-pane fade in active">
+           <div>
+           <img src="zonas_mapa2.png" class="img-responsive"  alt="Zonas UTM">
+         <div/>
+           <h3 class="subtitulos">1. Seleccionar elipsoide</h3>
+           <form>
+               <select class="form-control" id="select-zu">
+                 "", "Clarke 1866", "GRS80", "WGS84", "Otro"
+                <option value="0"></option>
+                <option value="1">Clarke 1866</option>
+                <option value="2">GRS80</option>
+                <option value="3">WGS84</option>
+                <option value="4">Otro</option>
+              </select>
+
+
+              <div class="form-group" id="other-h" style="display: none;">
+                <hr><h3 class="subtitulos">Ingresar el valor de los semiejes</h3></hr>
+                <input type="text" name="mayor" id="mayor" placeholder="Semieje mayor" class="form-control">
+                <input type="text" name="menor" id="menor" placeholder="Semieje menor" class="form-control">
+              </div>
+
+              <div class="radio">
+                <h3 class="subtitulos">2. Seleccionar tipo de transformación</h3>
+                <button type="button" onclick="direct()" class="btn btn-info">Directa</button>
+                <button type="button" onclick="indirect()" class="btn btn-info">Inversa</button>
+              </div>
+            <div class="form-group">
+            	<div class="coordinates">
+                  <hr> <h3 class="subtitulos">3. Seleccionar sistema de coordenadas</h3></hr>
+            	 <ul class="nav nav-tabs">
+			         <li class="active"><a data-toggle="tab" href="#11" id="sex11">Coordenadas sexagesimales</a></li>
+			         <li><a data-toggle="tab" href="#22" id="dec22">Coordenadas decimales</a></li>
+		        </ul>
+			    <div class="tab-content">
+
+		         <div id="11" class="tab-pane fade in active">
+
+                <hr><h3 class="subtitulos"> </h3></hr>
+                <p><label>Latitud:</label>
+                    <input type="number" name="lat1" id="lat1" placeholder="Grados °" class="form-control"/>
+                    <input type="number" class="form-control" name="lat2" id="lat2" placeholder="Minutos '" class="form-control"/>
+                    <input type="number" class="form-control" name="lat3" id="lat3" placeholder="Segundos ''"/></p>
+                <p><label>Longitud:</label>
+                    <input type="number" class="form-control" name="lng1" id="lngs1" placeholder="Grados °"/>
+                    <input type="number" class="form-control" name="lng2" id="lngs2" placeholder="Minutos '"/>
+                    <input type="number" class="form-control" name="lngs3" id="lngs3" placeholder="Segundos ''"/></p>
+                <button type="button" onclick="calculate()" class="btn btn-info">Calcular</button>
+
+		         </div>
+		          <div id="22" class="tab-pane">
+		         	  <hr><h3 class="subtitulos"></h3></hr>
+                    <p><label>Latitud:</label>
+                        <input type="number" name="lat1_dec" id="lat1_dec" placeholder="" class="form-control"/></p>
+                    <p><label>Longitud:</label>
+                        <input type="number" class="form-control" name="lngs1_dec" id="lngs1_dec" placeholder=""/></p>
+                <button type="button" onclick="calculate()" class="btn btn-info">Calcular</button>
+		         </div>
+		       </div>
+		      </div>
+
+              <div class="zona">
+                <hr><h3 class="subtitulos">3. Ingresar valores</h3></hr>
+                <p><label>Zona UTM:</label> <input type="number" class="form-control" name="zona_utm" id="zona_utm" placeholder="" min="1" max="60" />  </p>
+                <p><label>Coordenada X:</label> <input type="number" class="form-control" name="x" id="x"/></p>
+                <p><label>Coordenada Y:</label> <input type="number" class="form-control" name="y" id="y"/></p>
+                <button type="button" onclick="calculate()" class="btn btn-info">Calcular</button>
+              </div>
+
+              <div class="result1">
+              </div>
+            </div>
+          </form>
+         </div>
+        <!-- <div id="menu1" class="tab-pane fade">
+           <h3>Menu 1</h3>
+           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+         </div>
+         <div id="menu2" class="tab-pane fade">
+           <h3>Menu 2</h3>
+           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+         </div>
+         <div id="menu3" class="tab-pane fade">
+           <h3>Menu 3</h3>
+           <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+         </div>-->
+       </div>
+     </div>
+    </div>
+ </body>
+<script>
+$( document ).ready(function() {
+  var SemiMayor = 6378137;
+  var SemiMenor = 6356752.3141;
+  var isDirect = false;
+  var isIndirect = false;
+  $("#dec22").click(function(){
+    clear();
+  });
+  $("#sex11").click(function(){
+    clear();
+  });
+   $("#select-zu").change(function() {
+     console.log("click");
+        console.log($(this).val());
+        if ($(this).val()==4) {
+          $("#other-h").show();
+          console.log("show");
+        }else{
+          $("#other-h").hide();
+          console.log("hide");
+        }
+    });
+ });
+function degrees_to_radians(degrees)
+{
+  var pi = Math.PI;
+  return degrees * (pi/180);
+}
+
+ function calculate() {
+   $(".result1").show();
+   $(".result1").html("");
+   if (isDirect) {
+   	   //este if es para detectar si se ingresa los grados o se ingresan los decimales
+        if ($("#lat1").val()!="") {
+        	//ingreso grados
+        	 doDirect();
+        }else{
+        	//ingreso decimales
+        	 doDirectDecimal();
+        }
+
+   }else {
+     doIndirect();
+   }
+ }
+ function validaInverso(){
+    if($("#zona_utm").val()==""){
+        return false;
+    }else{
+      if($("#x").val()==""){
+            return false;
+        }else{
+            if($("#y").val()==""){
+               return false;
+            }else{
+               return true;
+            }
+        }
+    }
+}
+function validaDirecto(){
+   if($("#lngs1").val()==""){
+       return false;
+   }else{
+     if($("#lngs2").val()==""){
+           return false;
+       }else{
+           if($("#lngs3").val()==""){
+              return false;
+           }else{
+              if($("#lngs1").val()==""){
+                   return false;
+               }else{
+                    if($("#lat1").val()==""){
+                       return false;
+                   }else{
+                       if($("#lat2").val()==""){
+                               return false;
+                       }else{
+                         if($("#lat3").val()==""){
+                            return false;
+                        }else {
+                          return true;
+                        }
+                       }
+                   }
+               }
+           }
+       }
+   }
+}
+ function getCbx(){
+   var id_cbx = $(".form-control").val();
+   console.log(id_cbx);
+   if(id_cbx == 0){
+            //No selecciono nada
+            alert("Selecciona un elipsoide");
+            return 0.0;
+        }else{
+            if(id_cbx == 1){
+            //Tomo los datos del primer valor
+                SemiMayor = 6378206.4;
+                SemiMenor = 6356583.8;
+                return 0.0;
+            }else{
+                if(id_cbx == 2){
+                //Tomo los datos del segundo valor
+                    SemiMayor = 6378137;
+                    SemiMenor = 6356752.3141;
+                    return 0.0;
+                }else{
+                       if(id_cbx == 3){
+                            //Tomo los datos del tercer valor
+                           SemiMayor = 6378137;
+                           SemiMenor = 6356752.3;
+                           return 0.0;
+                        }else{
+
+                          var mayor = $("#mayor").val();
+                          var menor = $("#menor").val();
+                            //valor por el usuario
+                           if(menor==""||mayor==""){
+                               alert("Ingrese los semiejes del elipsoide");
+                           }else{
+                               SemiMayor = mayor;
+                               SemiMenor = menor;
+                           }
+                            return 0.0;
+                        }
+                }
+            }
+        }
+
+ }
+ function doIndirect(){
+   console.log("in direct");
+   getCbx();
+   if (!validaInverso()) {
+     alert("Ingrese la zona UTM y las coordenadas X Y");
+            return;
+   }else{
+     console.log("SemiMayor:_________________"+SemiMayor);
+     //---------------------------------------------------------------
+     //UTM INVERSO: (METROS A GEOGRÁFICAS)
+     //---------------------------------------------------------------
+
+       var ZonaUTMin = $("#zona_utm").val();
+     var CoordXUTMI = $("#x").val();
+     var CoordYUTMI = $("#y").val();
+
+     //ELEMENTOS DEL ELIPSOIDE
+     var eUTMI = (Math.sqrt((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2))))/SemiMayor;
+     var e2UTMI = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMayor,2));
+     var e_2UTMI = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMenor,2));
+     //FUNCIONES TRIGONOMÉTRICAS
+     var SenSegUTMI = Math.sin((Math.PI*(1/3600.0))/180.0);
+
+     //ZONA UTM
+     //ingresar Zona UTM
+     //MERIDIANO CENTRAL
+     var MeridianoCentral1UTMI=183-6.0*ZonaUTMin;
+     var MeridianoCentralUTMI;
+         if(ZonaUTMin<=30)
+             MeridianoCentralUTMI = MeridianoCentral1UTMI*(-1.0);
+         else MeridianoCentralUTMI = MeridianoCentral1UTMI*(-1);
+         //FUNCIÓN S (arco de meridiano)
+    var A0_ = ((SemiMayor*(1-e2UTMI))*(1.0+((3.0/4)*e2UTMI)+((45.0/64)*Math.pow(e2UTMI,2))+
+            ((175.0/256)*Math.pow(e2UTMI,3))+((11025.0/16384)*Math.pow(e2UTMI,4))));
+    var A2_ = (((SemiMayor*(1.0-e2UTMI))/2)*(((3.0/4)*e2UTMI)+((15.0/16)*Math.pow(e2UTMI,2))+
+            ((525.0/512)*Math.pow(e2UTMI,3))+((2205.0/2048)*Math.pow(e2UTMI,4))));
+    var A4_ = (((SemiMayor*(1.0-e2UTMI))/4)*(((15.0/64)*Math.pow(e2UTMI,2))+
+            ((105.0/256)*Math.pow(e2UTMI,3))+((2205.0/4096)*Math.pow(e2UTMI,4))));
+    var A6_ = (((SemiMayor*(1.0-e2UTMI))/6)*(
+            ((35.0/512)*Math.pow(e2UTMI,3))+((315.0/2048)*Math.pow(e2UTMI,4))));
+    var A8_ = (((SemiMayor*(1.0-e2UTMI))/8)*(
+            ((315.0/16384)*Math.pow(e2UTMI,4))));
+
+    //LATITUD PRIMA
+    var LatPrima1UTMI = CoordYUTMI/(0.9996*A0_*(SenSegUTMI*1)*3600);
+    var LatPrima2UTMI = ((CoordYUTMI/0.9996)+(A2_*Math.sin(degrees_to_radians(LatPrima1UTMI*2)))-
+            (A4_*Math.sin(degrees_to_radians(LatPrima1UTMI*4)))+(A6_*Math.sin(degrees_to_radians(LatPrima1UTMI*6))))/
+            (A0_*SenSegUTMI*3600);
+    var LatPrima3UTMI = ((CoordYUTMI/0.9996)+(A2_*Math.sin(degrees_to_radians(LatPrima2UTMI*2)))-
+            (A4_*Math.sin(degrees_to_radians(LatPrima2UTMI*4)))+(A6_*Math.sin(degrees_to_radians(LatPrima2UTMI*6))))/
+            (A0_*SenSegUTMI*3600);
+    var LatPrimaUTMI = ((CoordYUTMI/0.9996)+(A2_*Math.sin(degrees_to_radians(LatPrima3UTMI*2)))-
+            (A4_*Math.sin(degrees_to_radians(LatPrima3UTMI*4)))+(A6_*Math.sin(degrees_to_radians(LatPrima3UTMI*6))))/
+            (A0_*SenSegUTMI*3600);
+
+    var LatPrimaGradosUTMI = Math.trunc(LatPrimaUTMI);
+    var LatPrimaMin1UTMI = (LatPrimaUTMI-LatPrimaGradosUTMI)*60;
+    var LatPrimaMinUTMI = Math.trunc(LatPrimaMin1UTMI);
+
+    var LatPrimaSeg0UTMI = (LatPrimaUTMI*3600);
+    var LatPrimaSeg1UTMI = LatPrimaSeg0UTMI/60;
+    var LatPrimaSeg3UTMI = (Math.trunc(LatPrimaSeg1UTMI))*60;
+    var LatPrimaSegUTMI = LatPrimaSeg0UTMI-LatPrimaSeg3UTMI;
+    //FUNCIÓN X PRIMA Y FUNCION Q
+    var XPrimaUTMI = Math.abs(CoordXUTMI-500000);
+    var FuncionQUTMI = 0.000001*XPrimaUTMI;
+
+    //FUNCIONES TRIGONOMÉTRICAS DE LA LATITUD PRIMA
+    var CosLatPrimaUTMI = Math.cos(degrees_to_radians(LatPrimaUTMI));
+    var SenLatPrimaUTMI = Math.sin(degrees_to_radians(LatPrimaUTMI));
+    var TanLatPrimaUTMI = Math.tan(degrees_to_radians(LatPrimaUTMI));
+    var SecLatPrimaUTMI = 1/CosLatPrimaUTMI;
+
+    //ELEMENTOS DE LA ELIPSOIDE CON LATITUD PRIMA
+    var NLatPrimaUTMI = SemiMayor/(Math.pow((1-(e2UTMI*(Math.pow(SenLatPrimaUTMI,2)))),(0.5)));
+
+    //FUNCIÓN VII
+    var FuncionVII1UTMI = (TanLatPrimaUTMI/(2.0*Math.pow(NLatPrimaUTMI,2.0)*SenSegUTMI));
+    var FuncionVII0UTMI = Math.pow(NLatPrimaUTMI,2);
+    var FuncionVII2UTMI = (1+(e_2UTMI*Math.pow(CosLatPrimaUTMI,2.0)));
+    var FuncionVII3UTMI = ((1/Math.pow(0.9996,2.0))*Math.pow(10.0,12));
+    var FuncionVIIUTMI = FuncionVII1UTMI*FuncionVII2UTMI*FuncionVII3UTMI;
+
+    //FUNCIÓN VIII
+    var FuncionVIIIUTMI = (TanLatPrimaUTMI/(24*Math.pow(NLatPrimaUTMI,4)*SenSegUTMI))*
+            (5+(3*Math.pow(TanLatPrimaUTMI,2))+(6*e_2UTMI*Math.pow(CosLatPrimaUTMI,2))-
+            (6*e_2UTMI*Math.pow(SenLatPrimaUTMI,2))-(3*Math.pow(e_2UTMI,2)*Math.pow(CosLatPrimaUTMI,4))
+            -(9*Math.pow(e_2UTMI,2)*Math.pow(CosLatPrimaUTMI,2)*Math.pow(SenLatPrimaUTMI,2)))*((1/Math.pow(0.9996,4))*Math.pow(10,24));
+
+    //FUNCIÓN D
+    var FuncionD0UTMI = (TanLatPrimaUTMI/(720.0*Math.pow(NLatPrimaUTMI,6)*SenSegUTMI));
+    var FuncionD1UTMI = (90.0*Math.pow(TanLatPrimaUTMI*1.0,2.0));
+    var FuncionD2UTMI = (45.0*(Math.pow(TanLatPrimaUTMI*1.0,4.0)));
+    var FuncionD3UTMI = ((e_2UTMI*Math.pow(CosLatPrimaUTMI,2.0)));
+    var FuncionD4UTMI = 107*FuncionD3UTMI;
+    var FuncionD5UTMI = (162.0*e_2UTMI*Math.pow(SenLatPrimaUTMI,2));
+    var FuncionD6UTMI = (45.0*e_2UTMI*Math.pow(TanLatPrimaUTMI,2)*Math.pow(SenLatPrimaUTMI,2));
+    var FuncionD7UTMI = ((1.0/Math.pow(0.9996,6.0))*Math.pow(10.0,36));
+    var FuncionDUTMI = (Math.pow(FuncionQUTMI,6))*FuncionD0UTMI*   (61+FuncionD1UTMI+FuncionD2UTMI+FuncionD4UTMI-FuncionD5UTMI-FuncionD6UTMI)*FuncionD7UTMI ;
+
+    //LATITUD-INVERSA
+    var LatitudInversa0UTMI = ((FuncionVIIUTMI/3600.0));
+    var LatitudInversa1UTMI = Math.pow(FuncionQUTMI,2.0);
+    var LatitudInversa2UTMI = LatitudInversa0UTMI*LatitudInversa1UTMI;
+    var LatitudInversa3UTMI = FuncionVIIIUTMI/3600.0;
+    var LatitudInversa4UTMI = Math.pow(FuncionQUTMI,4.0);
+    var LatitudInversa5UTMI = LatitudInversa3UTMI*LatitudInversa4UTMI;
+    var LatitudInversa6UTMI = LatPrimaUTMI-LatitudInversa2UTMI+LatitudInversa5UTMI
+            -(FuncionDUTMI/3600);
+    var LatitudInversaUTMI = LatitudInversa6UTMI.toFixed(7);
+
+    //FUNCIÓN IX
+    var FuncionIX0UTMI = (NLatPrimaUTMI*SenSegUTMI);
+    var FuncionIX1UTMI = SecLatPrimaUTMI/FuncionIX0UTMI;
+    var FuncionIX2UTMI = (1.0/0.9996);
+    var FuncionIX2UTMI = FuncionIX2UTMI*Math.pow(10.0,6);
+    var FuncionIXUTMI = FuncionIX1UTMI*FuncionIX2UTMI;
+
+    //FUNCIÓN X
+    var FuncionX0UTMI = 6.0*(Math.pow(NLatPrimaUTMI,3))*SenSegUTMI;
+    var FuncionX1UTMI = SecLatPrimaUTMI/FuncionX0UTMI;
+    var FuncionX2UTMI = 2.0*(Math.pow(TanLatPrimaUTMI,2));
+    var FuncionX3UTMI = e_2UTMI*Math.pow(CosLatPrimaUTMI,2);
+    var FuncionX4UTMI = 1.0/Math.pow(0.9996,3);
+    var FuncionX5UTMI = FuncionX4UTMI*Math.pow(10,18);
+    var FuncionX6UTMI = 1+FuncionX2UTMI+FuncionX3UTMI;
+    var FuncionXUTMI = FuncionX1UTMI*FuncionX6UTMI*FuncionX5UTMI;
+
+    //FUNCIÓN E
+    var FuncionEUTMI = (Math.pow(FuncionQUTMI,5))*(SecLatPrimaUTMI/(120*Math.pow(NLatPrimaUTMI,5)*SenSegUTMI))*
+            (5+(28*Math.pow(TanLatPrimaUTMI,2))+(24*Math.pow(TanLatPrimaUTMI,4))+(6*e_2UTMI*Math.pow(CosLatPrimaUTMI,2))+
+            (8*e_2UTMI*Math.pow(SenLatPrimaUTMI,2)))*((1/Math.pow(0.9996,5))*Math.pow(10,30));
+
+    //LONGITUD-INVERSA
+    var LongitudInversa1UTMI = (FuncionIXUTMI*FuncionQUTMI)-(FuncionXUTMI*Math.pow(FuncionQUTMI,3))+FuncionEUTMI;
+    var LongitudInversa2UTMI = LongitudInversa1UTMI/3600;
+
+    var LongitudInversa3UTMI = MeridianoCentralUTMI+LongitudInversa2UTMI;
+    var LongitudInversa4UTMI = MeridianoCentralUTMI-LongitudInversa2UTMI;
+
+    var LongitudInversa5UTMI;
+        if (CoordXUTMI<500000)
+            LongitudInversa5UTMI = LongitudInversa4UTMI;
+        else
+            LongitudInversa5UTMI = LongitudInversa3UTMI;
+
+    var LongitudInversaUTMI = LongitudInversa5UTMI.toFixed(7);
+
+    //CONVERSION LONGITUD DECIMALES-SEXA
+    var FinalLngGrados0UTMD = Math.abs(LongitudInversaUTMI);
+
+    var FinalLngGradosUTMD = parseInt(Math.abs(FinalLngGrados0UTMD));
+
+    var FinalLngMin1UTMD = parseInt((FinalLngGrados0UTMD-FinalLngGradosUTMD)*60);
+    var FinalLngMinUTMD =  FinalLngMin1UTMD;
+
+    var FinalLngSeg0UTMD = (FinalLngGrados0UTMD*3600.0);
+    var FinalLngSeg1UTMD = FinalLngSeg0UTMD/60;
+    var FinalLngSeg2UTMD = parseInt(FinalLngSeg1UTMD);
+    var FinalLngSeg3UTMD = FinalLngSeg2UTMD*60;
+    var FinalLngSeg4UTMD = FinalLngSeg0UTMD-FinalLngSeg3UTMD;
+    var FinalLngSegUTMD = FinalLngSeg4UTMD.toFixed(5);
+
+    var FinalLngGradosSigno;
+       if(LongitudInversaUTMI<0)
+           FinalLngGradosSigno=(FinalLngGradosUTMD*(-1));
+       else
+           FinalLngGradosSigno=FinalLngGradosUTMD;
+
+    //CONVERSION LATITUD DECIMALES-SEXA
+    var FinalLatGrados0UTMD = Math.abs(LatitudInversaUTMI);
+
+    var FinalLatGradosUTMD = parseInt(Math.abs(FinalLatGrados0UTMD));
+
+    var FinalLatMin1UTMD = parseInt((FinalLatGrados0UTMD-FinalLatGradosUTMD)*60);
+    var FinalLatMinUTMD =  FinalLatMin1UTMD;
+
+    var FinalLatSeg0UTMD = (FinalLatGrados0UTMD*3600.0);
+    var FinalLatSeg1UTMD = FinalLatSeg0UTMD/60;
+    var FinalLatSeg2UTMD = parseInt(FinalLatSeg1UTMD);
+    var FinalLatSeg3UTMD = FinalLatSeg2UTMD*60;
+    var FinalLatSeg4UTMD = FinalLatSeg0UTMD-FinalLatSeg3UTMD;
+    var FinalLatSegUTMD = FinalLatSeg4UTMD.toFixed(5);
+
+    var FinalLatGradosSigno;
+       if(LatitudInversaUTMI<0)
+           FinalLatGradosSigno=(FinalLatGradosUTMD*(-1));
+       else
+           FinalLatGradosSigno=FinalLatGradosUTMD;
+
+
+
+//alert(+NLatPrimaUTMI)
+    console.log("Coordenada X "+CoordXUTMI);
+    console.log("Coordenada Y "+CoordYUTMI);
+    console.log("Latitud Prima  "+LatPrimaUTMI);
+    console.log("Latitud Prima grados  "+LatPrimaGradosUTMI);
+    console.log("Latitud Prima minutos "+LatPrimaMinUTMI);
+    console.log("Latitud Prima segundos "+LatPrimaSegUTMI);
+    console.log("Normal mayor con latitud prima "+NLatPrimaUTMI);
+    console.log("Función Q "+FuncionQUTMI);
+    console.log("Función VII "+FuncionVIIUTMI);
+    console.log("Función VIII "+FuncionVIIIUTMI);
+    console.log("Función D "+FuncionDUTMI);
+    console.log("Función IX "+FuncionIXUTMI);
+    console.log("Función X "+FuncionXUTMI);
+    console.log("Función E "+FuncionEUTMI);
+    console.log("Latitud Grados Decimales "+LatitudInversaUTMI);
+    console.log("Longitud Grados Decimales "+LongitudInversaUTMI);
+    console.log("Longitud Grados "+LongitudInversaUTMI);
+
+
+
+    $(".result1").html(
+        "<p><label>Coordenadas sexagesimales</label></p>"+
+        "</p>"+
+        "Latitud: "+FinalLatGradosSigno+"° "+FinalLatMinUTMD+"' "+FinalLatSegUTMD+'"'+
+        "</p>"+
+        "Longitud: "+FinalLngGradosSigno+"° "+FinalLngMinUTMD+"' "+FinalLngSegUTMD+'"'+
+        "</p>"+
+        "</p>"+
+        "<p><label>Coordenadas decimales</label></p>"+
+        "</p>"+
+        "Latitud: "+LatitudInversaUTMI+"°"+
+        "</p>"+
+        "Longitud: "+LongitudInversaUTMI+"°"
+        );
+
+
+   }
+ }
+ function clear(){
+   $("#lat1_dec").val("");
+   $("#lngs1_dec").val("");
+   $("#lat1").val("");
+   $("#lat2").val("");
+   $("#lat3").val("");
+   $("#lngs1").val("");
+   $("#lngs2").val("");
+   $("#lngs3").val("");
+     $(".result1").html("");
+ }
+ function doDirectDecimal(){
+ 	//este metodo es para desarrollar el algoritmo con decimales en lugar de grados
+ 	var LatGradosUTMD = $("#lat1_dec").val();
+ 	var LngGradosUTMD = $("#lngs1_dec").val();
+  console.log("do-direct decimal");
+  getCbx();
+  console.log(LatGradosUTMD);
+  console.log(LngGradosUTMD);
+  if (LatGradosUTMD==""||LngGradosUTMD=="") {
+    alert("Ingrese las coordenadas geográficas");
+           return;
+  }else {
+      console.log("SemiMayor:_________________"+SemiMayor);
+       //---------------------------------------------------------------
+       //UTM DIRECTO: (GEOGRÁFICAS A METROS)
+       //---------------------------------------------------------------
+       // var LatGradosUTMD = $("#lat1").val();
+       // var LatMinUTMD = $("#lat2").val();
+       // var LatSegUTMD = $("#lat3").val();
+       // var LngGradosUTMD = $("#lngs1").val();
+       // var LngMinUTMD = $("#lngs2").val();
+       // var LngSegUTMD = $("#lngs3").val();
+
+       var SemiMayorUTMD = 6378137;
+       var SemiMenorUTMD = 6356752.3141;
+
+       //CONVERSIÓN DE SEXAGESIMAL A DECIMALES
+       // var LatDecimales1UTMD = (Math.abs(LatGradosUTMD))+(LatMinUTMD/60)+(LatSegUTMD/3600);
+       // var LngDecimales1UTMD = (Math.abs(LngGradosUTMD))+(LngMinUTMD/60)+(LngSegUTMD/3600);
+       //
+       // var LatDecimales2UTMD;
+       // if(LatGradosUTMD<0.0)
+       //     LatDecimales2UTMD = LatDecimales1UTMD*(-1);
+       // else LatDecimales2UTMD = LatDecimales1UTMD;
+
+       var LatDecimalesUTMD = LatGradosUTMD;
+       //
+       // var LngDecimales2UTMD;
+       // if(LngGradosUTMD<0.0)
+       //     LngDecimales2UTMD = LngDecimales1UTMD*(-1);
+       // else LngDecimales2UTMD = LngDecimales1UTMD;
+
+       var LngDecimalesUTMD = LngGradosUTMD;
+
+       //FUNCIONES TRIGONOMÉTRICAS DE LA LATITUD
+       var SenLatUTMD = Math.sin(degrees_to_radians(LatDecimalesUTMD));
+       var SenSegUTMD = Math.sin((Math.PI*(1/3600.0))/180.0);
+       var CosLatUTMD = Math.cos(degrees_to_radians(LatDecimalesUTMD));
+       var TanLatUTMD = Math.tan(degrees_to_radians(LatDecimalesUTMD));
+
+       //ELEMENTOS DEL ELIPSOIDE
+       var eUTMD = (Math.sqrt((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2))))/SemiMayor;
+       var e2UTMD = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMayor,2));
+       var e_2UTMD = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMenor,2));
+       var NUTMD = SemiMayor/(Math.pow((1-(e2UTMD*(Math.pow(SenLatUTMD,2)))),(0.5)));
+
+       //ZONA UTM
+       var ZonaUTM1UTMD = (183+(LngGradosUTMD*1))/6;
+       var ZonaUTM2UTMD = LngGradosUTMD%6;
+       var ZonaUTM3UTMD = Math.round(ZonaUTM1UTMD);
+       var ZonaUTM4UTMD = LngGradosUTMD*(-1.0);
+       var ZonaUTMUTMD;
+           if((ZonaUTM2UTMD==0)&&(ZonaUTM4UTMD==Math.abs(LngGradosUTMD)))
+              ZonaUTMUTMD = ZonaUTM3UTMD-1.0;
+           else ZonaUTMUTMD = ZonaUTM3UTMD;
+
+       //MERIDIANO CENTRAL
+       var MeridianoCentral1UTMD=183-6.0*ZonaUTMUTMD;
+       var MeridianoCentralUTMD;
+           if(ZonaUTMUTMD<=30)
+               MeridianoCentralUTMD = MeridianoCentral1UTMD*(-1.0);
+           else MeridianoCentralUTMD = MeridianoCentral1UTMD*(-1);
+
+       //DIFERENCIA LONGITUDINAL
+       var DiferenciaLngUTMD = Math.abs((Math.abs(MeridianoCentralUTMD))-(Math.abs(LngDecimalesUTMD)));
+
+       var DiferenciaLngGradosUTMD = parseInt(DiferenciaLngUTMD);
+       var DiferenciaLngMin1UTMD = parseInt((DiferenciaLngUTMD-DiferenciaLngGradosUTMD)*60);
+       var DiferenciaLngMinUTMD =  DiferenciaLngMin1UTMD;
+
+       var DiferenciaLngSeg0UTMD = (DiferenciaLngUTMD*3600.0);
+       var DiferenciaLngSeg1UTMD = DiferenciaLngSeg0UTMD/60;
+       var DiferenciaLngSeg2UTMD = parseInt(DiferenciaLngSeg1UTMD);
+       var DiferenciaLngSeg3UTMD = DiferenciaLngSeg2UTMD*60;
+       var DiferenciaLngSegUTMD = DiferenciaLngSeg0UTMD-DiferenciaLngSeg3UTMD;
+
+       //var DiferenciaLngSegUTMD = DiferenciaLngSeg2UTMD+DiferenciaLngSeg3UTMD;
+//¿?Hacer prueblas porque no estoy segura sobre el signo del meridiano central
+
+       //FUNCIÓN VI
+       var FuncionIV0UTMD = CosLatUTMD*SenSegUTMD;
+       var FuncionIV1UTMD = NUTMD*(9996.0);
+       var FuncionIVUTMD = FuncionIV0UTMD*FuncionIV1UTMD;
+
+       //FUNCIÓN P
+       var FuncionP0UTMD = DiferenciaLngGradosUTMD*3600.0;
+       var FuncionP1UTMD = DiferenciaLngMinUTMD*60.0;
+       var FuncionP2UTMD = FuncionP0UTMD+FuncionP1UTMD+DiferenciaLngSegUTMD;
+       var FuncionPUTMD = FuncionP2UTMD/10000.0;
+
+       //FUNCIÓN V
+       var FuncionV0UTMD = Math.pow(SenSegUTMD,3);
+       var FuncionV1UTMD = Math.pow(CosLatUTMD,3);
+       var FuncionV2UTMD = FuncionV0UTMD*FuncionV1UTMD*NUTMD;
+       var FuncionV3UTMD = FuncionV2UTMD/6.0;
+       var FuncionV4UTMD = e_2UTMD*(Math.pow(CosLatUTMD,2));
+       var FuncionV5UTMD = 1.0-(Math.pow(TanLatUTMD,2));
+       var FuncionV6UTMD = FuncionV5UTMD+FuncionV4UTMD;
+       var FuncionV7UTMD = 0.9996*(Math.pow(10,12));
+       var FuncionVUTMD = FuncionV3UTMD*FuncionV6UTMD*FuncionV7UTMD;
+
+       //FUNCIÓN B
+       var FuncionB0UTMD = Math.pow(FuncionPUTMD,5);
+       var FuncionB1UTMD = Math.pow(SenSegUTMD,5)*NUTMD*
+               Math.pow(CosLatUTMD,5);
+       var FuncionB2UTMD = FuncionB1UTMD/120.0;
+       var FuncionB3UTMD = 18.0*Math.pow(TanLatUTMD,2);
+       var FuncionB4UTMD = 14.0*e_2UTMD*Math.pow(CosLatUTMD,2);
+       var FuncionB5UTMD = 58.0*e_2UTMD*Math.pow(SenLatUTMD,2);
+       var FuncionB6UTMD = Math.pow(TanLatUTMD,4);
+       var FuncionB70UTMD = 5.0-FuncionB3UTMD;
+       var FuncionB71UTMD = FuncionB70UTMD+FuncionB6UTMD;
+       var FuncionB72UTMD = FuncionB71UTMD+FuncionB4UTMD;
+       var FuncionB73UTMD = FuncionB72UTMD-FuncionB5UTMD;
+       var FuncionB9UTMD = 0.9996*(Math.pow(10,20));
+       var FuncionBUTMD = FuncionB0UTMD*FuncionB2UTMD*FuncionB73UTMD*FuncionB9UTMD;
+
+       //ABSCISA X
+       var AbscisaX0menos = FuncionIVUTMD*FuncionPUTMD;
+       var AbscisaX1menos = FuncionVUTMD*Math.pow(FuncionPUTMD,3);
+       var AbscisaX2menos = AbscisaX0menos+AbscisaX1menos+FuncionBUTMD;
+       var AbscisaXmenos = 500000.0-Math.abs(AbscisaX2menos);
+
+       var AbscisaX0mas = FuncionIVUTMD*FuncionPUTMD;
+       var AbscisaX1mas = FuncionVUTMD*Math.pow(FuncionPUTMD,3);
+       var AbscisaX2mas = AbscisaX0mas+AbscisaX1mas+FuncionBUTMD;
+       var AbscisaXmas = 500000.0+Math.abs(AbscisaX2mas);
+
+
+       var AbscisaX1UTMD;
+           if((ZonaUTMUTMD < 30.0)&&(Math.abs(LngDecimalesUTMD)<=Math.abs(MeridianoCentralUTMD)))
+               {AbscisaX1UTMD = AbscisaXmas;}
+           else if ((ZonaUTMUTMD < 30.0)&&(Math.abs(LngDecimalesUTMD)>=Math.abs(MeridianoCentralUTMD)))
+               {AbscisaX1UTMD = AbscisaXmenos;}
+           else if ((ZonaUTMUTMD >= 30)&&(Math.abs(LngDecimalesUTMD)<=Math.abs(MeridianoCentralUTMD)))
+               {AbscisaX1UTMD = AbscisaXmenos;}
+           else if ((ZonaUTMUTMD >= 30)&&(Math.abs(LngDecimalesUTMD)>=Math.abs(MeridianoCentralUTMD)))
+               {AbscisaX1UTMD = AbscisaXmas;}
+
+       var AbscisaXUTMD = AbscisaX1UTMD.toFixed(5);
+
+       //FUNCIÓN S (arco de meridiano) y FUNCION I
+       var A0UTMD = ((SemiMayor*(1-e2UTMD))*(1.0+((3.0/4)*e2UTMD)+((45.0/64)*Math.pow(e2UTMD,2))+
+               ((175.0/256)*Math.pow(e2UTMD,3))+((11025.0/16384)*Math.pow(e2UTMD,4))))
+               *(degrees_to_radians(LatDecimalesUTMD));
+       var A2UTMD = (((SemiMayor*(1.0-e2UTMD))/2)*(((3.0/4)*e2UTMD)+((15.0/16)*Math.pow(e2UTMD,2))+
+               ((525.0/512)*Math.pow(e2UTMD,3))+((2205.0/2048)*Math.pow(e2UTMD,4))))
+               *(Math.sin(degrees_to_radians(LatDecimalesUTMD*2)));
+       var A4UTMD = (((SemiMayor*(1.0-e2UTMD))/4)*(((15.0/64)*Math.pow(e2UTMD,2))+
+               ((105.0/256)*Math.pow(e2UTMD,3))+((2205.0/4096)*Math.pow(e2UTMD,4))))
+               *(Math.sin(degrees_to_radians(LatDecimalesUTMD*4)));
+       var A6UTMD = (((SemiMayor*(1.0-e2UTMD))/6)*(
+               ((35.0/512)*Math.pow(e2UTMD,3))+((315.0/2048)*Math.pow(e2UTMD,4))))
+               *(Math.sin(degrees_to_radians(LatDecimalesUTMD*6)));
+       var A8UTMD = (((SemiMayor*(1.0-e2UTMD))/8)*(
+               ((315.0/16384)*Math.pow(e2UTMD,4))))
+               *(Math.sin(degrees_to_radians(LatDecimalesUTMD*8)));
+       var SUTMD = A0UTMD-A2UTMD+A4UTMD-A6UTMD+A8UTMD;
+       var FuncionIUTMD = SUTMD*0.9996;
+
+       //FUNCIÓN II
+       var FuncionIIUTMD = ((NUTMD*SenLatUTMD*CosLatUTMD*Math.pow(SenSegUTMD,2))/2)*
+               (0.9996*(Math.pow(10,8)));
+
+       //FUNCIÓN III
+       var FuncionIIIUTMD = (((Math.pow(SenSegUTMD,4)*NUTMD*SenLatUTMD*Math.pow(CosLatUTMD,3)))/24)*
+               (5-Math.pow(TanLatUTMD,2)+(9*e_2UTMD*Math.pow(CosLatUTMD,2))+(4*Math.pow(e_2UTMD,2)*Math.pow(CosLatUTMD,4)))*
+               (0.9996*(Math.pow(10,16)));
+
+       //FUNCION A
+       var FuncionAUTMD = (Math.pow(FuncionPUTMD,6))*((Math.pow(SenSegUTMD,6)*NUTMD*SenLatUTMD*Math.pow(CosLatUTMD,5))/720)*
+               (61-(58*Math.pow(TanLatUTMD,2))+Math.pow(TanLatUTMD,4)+(270*e_2UTMD*Math.pow(CosLatUTMD,2))-
+               (330*e_2UTMD*Math.pow(SenLatUTMD,2)))*(0.9996*(Math.pow(10,24)));
+
+       //ORDENADA Y
+       var OrdenadaY1UTMD = FuncionIUTMD+(FuncionIIUTMD*Math.pow(FuncionPUTMD,2))+
+               (FuncionIIIUTMD*Math.pow(FuncionPUTMD,4))+FuncionAUTMD;
+
+       var OrdenadaYUTMD = OrdenadaY1UTMD.toFixed(5);
+
+       console.log("Excentricidad"+eUTMD);
+       console.log("Excentricidad^2 "+e2UTMD);
+       console.log("Excentricidad^2' "+e_2UTMD);
+       console.log("Normal mayor "+NUTMD);
+       console.log("Latitud decimal "+LatDecimalesUTMD);
+       console.log("Longitud decimal "+LngDecimalesUTMD);
+       console.log("Seno de la latitud "+SenLatUTMD);
+       console.log("Seno de un segundo "+SenSegUTMD);
+       console.log("Coseno de la latitud "+CosLatUTMD);
+       console.log("Tangente de la latitud "+TanLatUTMD);
+       console.log("Zona UTM "+ZonaUTMUTMD);
+       console.log("Meridiano Central "+MeridianoCentralUTMD);
+       console.log("Diferencia longitudinal decimales "+DiferenciaLngUTMD);
+       console.log("Diferencia longitudinal grados "+DiferenciaLngGradosUTMD);
+       console.log("Diferencia longitudinal minutos "+DiferenciaLngMinUTMD);
+       console.log("Diferencia longitudinal segundos "+DiferenciaLngSegUTMD);
+       console.log("Función IV "+FuncionIVUTMD);
+       console.log("Función P "+FuncionPUTMD);
+       console.log("Función V "+FuncionVUTMD);
+       console.log("Función B5 "+FuncionBUTMD);
+       console.log("S "+SUTMD);
+       console.log("Función I "+FuncionIUTMD);
+       console.log("Función II "+FuncionIIUTMD);
+       console.log("Función III "+FuncionIIIUTMD);
+       console.log("Función A "+FuncionAUTMD);
+       console.log("Abscisa X "+AbscisaXUTMD);
+       console.log("Ordenada Y "+OrdenadaYUTMD);
+
+
+      $(".result1").html(
+          "<p><label>Coordenadas decimales</p></label>"+
+          "</p>"+
+          "Latitud: "+LatDecimalesUTMD+"°"+
+          "</p>"+
+          "Longitud: "+LngDecimalesUTMD+"°"+
+          "</p>"+
+          "<p><label>Coordenadas UTM</p></label>"+
+          "</p>"+
+          "Zona UTM: "+ZonaUTMUTMD+
+          "</p>"+
+          "Meridiano central: "+MeridianoCentralUTMD+"°"+
+          "</p>"+
+          "Abscisa X: "+AbscisaXUTMD+" metros"+
+          "</p>"+
+          "Ordenada Y: "+OrdenadaYUTMD+" metros"
+          );
+
+  }
+ }
+ function doDirect(){
+   console.log("do-direct");
+   getCbx();
+   console.log(validaDirecto());
+   if (!validaDirecto()) {
+     alert("Ingrese las coordenadas geográficas");
+            return;
+   }else {
+       console.log("SemiMayor:_________________"+SemiMayor);
+        //---------------------------------------------------------------
+        //UTM DIRECTO: (GEOGRÁFICAS A METROS)
+        //---------------------------------------------------------------
+        var LatGradosUTMD = $("#lat1").val();
+        var LatMinUTMD = $("#lat2").val();
+        var LatSegUTMD = $("#lat3").val();
+        var LngGradosUTMD = $("#lngs1").val();
+        var LngMinUTMD = $("#lngs2").val();
+        var LngSegUTMD = $("#lngs3").val();
+
+        //var SemiMayorUTMD = 6378137;
+        //var SemiMenorUTMD = 6356752.3141;
+
+        //CONVERSIÓN DE SEXAGESIMAL A DECIMALES
+        var LatDecimales1UTMD = (Math.abs(LatGradosUTMD))+(LatMinUTMD/60)+(LatSegUTMD/3600);
+        var LngDecimales1UTMD = (Math.abs(LngGradosUTMD))+(LngMinUTMD/60)+(LngSegUTMD/3600);
+
+        var LatDecimales2UTMD;
+        if(LatGradosUTMD<0.0)
+            LatDecimales2UTMD = LatDecimales1UTMD*(-1);
+        else LatDecimales2UTMD = LatDecimales1UTMD;
+
+        var LatDecimalesUTMD = LatDecimales2UTMD.toFixed(7);
+
+        var LngDecimales2UTMD;
+        if(LngGradosUTMD<0.0)
+            LngDecimales2UTMD = LngDecimales1UTMD*(-1);
+        else LngDecimales2UTMD = LngDecimales1UTMD;
+
+        var LngDecimalesUTMD = LngDecimales2UTMD.toFixed(7);
+
+        //FUNCIONES TRIGONOMÉTRICAS DE LA LATITUD
+        var SenLatUTMD = Math.sin(degrees_to_radians(LatDecimalesUTMD));
+        var SenSegUTMD = Math.sin((Math.PI*(1/3600.0))/180.0);
+        var CosLatUTMD = Math.cos(degrees_to_radians(LatDecimalesUTMD));
+        var TanLatUTMD = Math.tan(degrees_to_radians(LatDecimalesUTMD));
+
+        //ELEMENTOS DEL ELIPSOIDE
+        var eUTMD = (Math.sqrt((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2))))/SemiMayor;
+        var e2UTMD = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMayor,2));
+        var e_2UTMD = ((Math.pow(SemiMayor,2))-(Math.pow(SemiMenor,2)))/(Math.pow(SemiMenor,2));
+        var NUTMD = SemiMayor/(Math.pow((1-(e2UTMD*(Math.pow(SenLatUTMD,2)))),(0.5)));
+
+        //ZONA UTM
+        var ZonaUTM1UTMD = (183+(LngGradosUTMD*1))/6;
+        var ZonaUTM2UTMD = LngGradosUTMD%6;
+        var ZonaUTM3UTMD = Math.round(ZonaUTM1UTMD);
+        var ZonaUTM4UTMD = LngGradosUTMD*(-1.0);
+        var ZonaUTMUTMD;
+            if((ZonaUTM2UTMD==0)&&(ZonaUTM4UTMD==Math.abs(LngGradosUTMD)))
+               ZonaUTMUTMD = ZonaUTM3UTMD-1.0;
+            else ZonaUTMUTMD = ZonaUTM3UTMD;
+
+        //MERIDIANO CENTRAL
+        var MeridianoCentral1UTMD=183-6.0*ZonaUTMUTMD;
+        var MeridianoCentralUTMD;
+            if(ZonaUTMUTMD<=30)
+                MeridianoCentralUTMD = MeridianoCentral1UTMD*(-1.0);
+            else MeridianoCentralUTMD = MeridianoCentral1UTMD*(-1);
+
+        //DIFERENCIA LONGITUDINAL
+        var DiferenciaLngUTMD = Math.abs((Math.abs(MeridianoCentralUTMD))-(Math.abs(LngDecimalesUTMD)));
+
+        var DiferenciaLngGradosUTMD = parseInt(DiferenciaLngUTMD);
+        var DiferenciaLngMin1UTMD = parseInt((DiferenciaLngUTMD-DiferenciaLngGradosUTMD)*60);
+        var DiferenciaLngMinUTMD =  DiferenciaLngMin1UTMD;
+
+        var DiferenciaLngSeg0UTMD = (DiferenciaLngUTMD*3600.0);
+        var DiferenciaLngSeg1UTMD = DiferenciaLngSeg0UTMD/60;
+        var DiferenciaLngSeg2UTMD = parseInt(DiferenciaLngSeg1UTMD);
+        var DiferenciaLngSeg3UTMD = DiferenciaLngSeg2UTMD*60;
+        var DiferenciaLngSegUTMD = DiferenciaLngSeg0UTMD-DiferenciaLngSeg3UTMD;
+
+        //var DiferenciaLngSegUTMD = DiferenciaLngSeg2UTMD+DiferenciaLngSeg3UTMD;
+//¿?Hacer prueblas porque no estoy segura sobre el signo del meridiano central
+
+        //FUNCIÓN VI
+        var FuncionIV0UTMD = CosLatUTMD*SenSegUTMD;
+        var FuncionIV1UTMD = NUTMD*(9996.0);
+        var FuncionIVUTMD = FuncionIV0UTMD*FuncionIV1UTMD;
+
+        //FUNCIÓN P
+        var FuncionP0UTMD = DiferenciaLngGradosUTMD*3600.0;
+        var FuncionP1UTMD = DiferenciaLngMinUTMD*60.0;
+        var FuncionP2UTMD = FuncionP0UTMD+FuncionP1UTMD+DiferenciaLngSegUTMD;
+        var FuncionPUTMD = FuncionP2UTMD/10000.0;
+
+        //FUNCIÓN V
+        var FuncionV0UTMD = Math.pow(SenSegUTMD,3);
+        var FuncionV1UTMD = Math.pow(CosLatUTMD,3);
+        var FuncionV2UTMD = FuncionV0UTMD*FuncionV1UTMD*NUTMD;
+        var FuncionV3UTMD = FuncionV2UTMD/6.0;
+        var FuncionV4UTMD = e_2UTMD*(Math.pow(CosLatUTMD,2));
+        var FuncionV5UTMD = 1.0-(Math.pow(TanLatUTMD,2));
+        var FuncionV6UTMD = FuncionV5UTMD+FuncionV4UTMD;
+        var FuncionV7UTMD = 0.9996*(Math.pow(10,12));
+        var FuncionVUTMD = FuncionV3UTMD*FuncionV6UTMD*FuncionV7UTMD;
+
+        //FUNCIÓN B
+        var FuncionB0UTMD = Math.pow(FuncionPUTMD,5);
+        var FuncionB1UTMD = Math.pow(SenSegUTMD,5)*NUTMD*
+                Math.pow(CosLatUTMD,5);
+        var FuncionB2UTMD = FuncionB1UTMD/120.0;
+        var FuncionB3UTMD = 18.0*Math.pow(TanLatUTMD,2);
+        var FuncionB4UTMD = 14.0*e_2UTMD*Math.pow(CosLatUTMD,2);
+        var FuncionB5UTMD = 58.0*e_2UTMD*Math.pow(SenLatUTMD,2);
+        var FuncionB6UTMD = Math.pow(TanLatUTMD,4);
+        var FuncionB70UTMD = 5.0-FuncionB3UTMD;
+        var FuncionB71UTMD = FuncionB70UTMD+FuncionB6UTMD;
+        var FuncionB72UTMD = FuncionB71UTMD+FuncionB4UTMD;
+        var FuncionB73UTMD = FuncionB72UTMD-FuncionB5UTMD;
+        var FuncionB9UTMD = 0.9996*(Math.pow(10,20));
+        var FuncionBUTMD = FuncionB0UTMD*FuncionB2UTMD*FuncionB73UTMD*FuncionB9UTMD;
+
+        //ABSCISA X
+        var AbscisaX0menos = FuncionIVUTMD*FuncionPUTMD;
+        var AbscisaX1menos = FuncionVUTMD*Math.pow(FuncionPUTMD,3);
+        var AbscisaX2menos = AbscisaX0menos+AbscisaX1menos+FuncionBUTMD;
+        var AbscisaXmenos = 500000.0-Math.abs(AbscisaX2menos);
+
+        var AbscisaX0mas = FuncionIVUTMD*FuncionPUTMD;
+        var AbscisaX1mas = FuncionVUTMD*Math.pow(FuncionPUTMD,3);
+        var AbscisaX2mas = AbscisaX0mas+AbscisaX1mas+FuncionBUTMD;
+        var AbscisaXmas = 500000.0+Math.abs(AbscisaX2mas);
+
+
+        var AbscisaX1UTMD;
+            if((ZonaUTMUTMD < 30.0)&&(Math.abs(LngDecimalesUTMD)<=Math.abs(MeridianoCentralUTMD)))
+                {AbscisaX1UTMD = AbscisaXmas;}
+            else if ((ZonaUTMUTMD < 30.0)&&(Math.abs(LngDecimalesUTMD)>=Math.abs(MeridianoCentralUTMD)))
+                {AbscisaX1UTMD = AbscisaXmenos;}
+            else if ((ZonaUTMUTMD >= 30)&&(Math.abs(LngDecimalesUTMD)<=Math.abs(MeridianoCentralUTMD)))
+                {AbscisaX1UTMD = AbscisaXmenos;}
+            else if ((ZonaUTMUTMD >= 30)&&(Math.abs(LngDecimalesUTMD)>=Math.abs(MeridianoCentralUTMD)))
+                {AbscisaX1UTMD = AbscisaXmas;}
+
+        var AbscisaXUTMD = AbscisaX1UTMD.toFixed(5);
+
+        //FUNCIÓN S (arco de meridiano) y FUNCION I
+        var A0UTMD = ((SemiMayor*(1-e2UTMD))*(1.0+((3.0/4)*e2UTMD)+((45.0/64)*Math.pow(e2UTMD,2))+
+                ((175.0/256)*Math.pow(e2UTMD,3))+((11025.0/16384)*Math.pow(e2UTMD,4))))
+                *(degrees_to_radians(LatDecimalesUTMD));
+        var A2UTMD = (((SemiMayor*(1.0-e2UTMD))/2)*(((3.0/4)*e2UTMD)+((15.0/16)*Math.pow(e2UTMD,2))+
+                ((525.0/512)*Math.pow(e2UTMD,3))+((2205.0/2048)*Math.pow(e2UTMD,4))))
+                *(Math.sin(degrees_to_radians(LatDecimalesUTMD*2)));
+        var A4UTMD = (((SemiMayor*(1.0-e2UTMD))/4)*(((15.0/64)*Math.pow(e2UTMD,2))+
+                ((105.0/256)*Math.pow(e2UTMD,3))+((2205.0/4096)*Math.pow(e2UTMD,4))))
+                *(Math.sin(degrees_to_radians(LatDecimalesUTMD*4)));
+        var A6UTMD = (((SemiMayor*(1.0-e2UTMD))/6)*(
+                ((35.0/512)*Math.pow(e2UTMD,3))+((315.0/2048)*Math.pow(e2UTMD,4))))
+                *(Math.sin(degrees_to_radians(LatDecimalesUTMD*6)));
+        var A8UTMD = (((SemiMayor*(1.0-e2UTMD))/8)*(
+                ((315.0/16384)*Math.pow(e2UTMD,4))))
+                *(Math.sin(degrees_to_radians(LatDecimalesUTMD*8)));
+        var SUTMD = A0UTMD-A2UTMD+A4UTMD-A6UTMD+A8UTMD;
+        var FuncionIUTMD = SUTMD*0.9996;
+
+        //FUNCIÓN II
+        var FuncionIIUTMD = ((NUTMD*SenLatUTMD*CosLatUTMD*Math.pow(SenSegUTMD,2))/2)*
+                (0.9996*(Math.pow(10,8)));
+
+        //FUNCIÓN III
+        var FuncionIIIUTMD = (((Math.pow(SenSegUTMD,4)*NUTMD*SenLatUTMD*Math.pow(CosLatUTMD,3)))/24)*
+                (5-Math.pow(TanLatUTMD,2)+(9*e_2UTMD*Math.pow(CosLatUTMD,2))+(4*Math.pow(e_2UTMD,2)*Math.pow(CosLatUTMD,4)))*
+                (0.9996*(Math.pow(10,16)));
+
+        //FUNCION A
+        var FuncionAUTMD = (Math.pow(FuncionPUTMD,6))*((Math.pow(SenSegUTMD,6)*NUTMD*SenLatUTMD*Math.pow(CosLatUTMD,5))/720)*
+                (61-(58*Math.pow(TanLatUTMD,2))+Math.pow(TanLatUTMD,4)+(270*e_2UTMD*Math.pow(CosLatUTMD,2))-
+                (330*e_2UTMD*Math.pow(SenLatUTMD,2)))*(0.9996*(Math.pow(10,24)));
+
+        //ORDENADA Y
+        var OrdenadaY1UTMD = FuncionIUTMD+(FuncionIIUTMD*Math.pow(FuncionPUTMD,2))+
+                (FuncionIIIUTMD*Math.pow(FuncionPUTMD,4))+FuncionAUTMD;
+
+        var OrdenadaYUTMD = OrdenadaY1UTMD.toFixed(5);
+
+        console.log("Excentricidad"+eUTMD);
+        console.log("Excentricidad^2 "+e2UTMD);
+        console.log("Excentricidad^2' "+e_2UTMD);
+        console.log("Normal mayor "+NUTMD);
+        console.log("Latitud decimal "+LatDecimalesUTMD);
+        console.log("Longitud decimal "+LngDecimalesUTMD);
+        console.log("Seno de la latitud "+SenLatUTMD);
+        console.log("Seno de un segundo "+SenSegUTMD);
+        console.log("Coseno de la latitud "+CosLatUTMD);
+        console.log("Tangente de la latitud "+TanLatUTMD);
+        console.log("Zona UTM "+ZonaUTMUTMD);
+        console.log("Meridiano Central "+MeridianoCentralUTMD);
+        console.log("Diferencia longitudinal decimales "+DiferenciaLngUTMD);
+        console.log("Diferencia longitudinal grados "+DiferenciaLngGradosUTMD);
+        console.log("Diferencia longitudinal minutos "+DiferenciaLngMinUTMD);
+        console.log("Diferencia longitudinal segundos "+DiferenciaLngSegUTMD);
+        console.log("Función IV "+FuncionIVUTMD);
+        console.log("Función P "+FuncionPUTMD);
+        console.log("Función V "+FuncionVUTMD);
+        console.log("Función B5 "+FuncionBUTMD);
+        console.log("S "+SUTMD);
+        console.log("Función I "+FuncionIUTMD);
+        console.log("Función II "+FuncionIIUTMD);
+        console.log("Función III "+FuncionIIIUTMD);
+        console.log("Función A "+FuncionAUTMD);
+        console.log("Abscisa X "+AbscisaXUTMD);
+        console.log("Ordenada Y "+OrdenadaYUTMD);
+
+
+       $(".result1").html(
+           "<p><label>Coordenadas decimales</p></label>"+
+           "</p>"+
+           "Latitud: "+LatDecimalesUTMD+"°"+
+           "</p>"+
+           "Longitud: "+LngDecimalesUTMD+"°"+
+           "</p>"+
+           "<p><label>Coordenadas UTM</p></label>"+
+           "</p>"+
+           "Zona UTM: "+ZonaUTMUTMD+
+           "</p>"+
+           "Meridiano central: "+MeridianoCentralUTMD+"°"+
+           "</p>"+
+           "Abscisa X: "+AbscisaXUTMD+" metros"+
+           "</p>"+
+           "Ordenada Y: "+OrdenadaYUTMD+" metros"
+           );
+
+   }
+
+ }
+ function direct() {
+   console.log("direct");
+   $(".coordinates").show();
+   $(".zona").hide();
+   isDirect = true;
+   isIndirect = false;
+ }
+ function indirect() {
+   console.log("indirect");
+   $(".coordinates").hide();
+   $(".zona").show();
+   isDirect = false;
+   isIndirect = true;
+ }
+
+</script>
+</html>
