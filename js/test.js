@@ -26,7 +26,6 @@ params: word type object
         alphabet type array
 
 */
-const upperCase = word => console.log(`${isUperCase(word, alphabet) ? 'You string start with an upper-case':'You string is not start with an upper-case'}`)
 
 const upperCase2 = word => (`${isUperCase(word, alphabet) ? 'You string start with an upper-case':'You string is not start with an upper-case'}`)
 
@@ -37,9 +36,7 @@ lowerWord = {
 	word: 'prescrypto'
 }
 
- upperCase(upperWord, alphabet)
-
-document.getElementById('resultUp').innerHTML = upperCase2(upperWord, alphabet)
+document.getElementById('resultUp').innerHTML = "ha"
 
 /*
 Arrow function 
@@ -47,7 +44,6 @@ To find the area of a circle with an radius
 params: radius type integer
 */
 const calculateArea = (radius) => Math.PI * Math.pow(radius,2)
-console.log(`The area de circle is: ${calculateArea(2)}`)
 
 document.getElementById('resultArea').innerHTML = (`The area de circle is: ${calculateArea(2)}`)
 
@@ -64,10 +60,13 @@ function sumNumbers(numbers){
 }
 let numbers = [2, 6, 8,123, 567, 89, 234]
 
-console.log('Calues in arrary are: '+ sumNumbers(numbers))
 document.getElementById('resultSum').innerHTML = ('The sum of array is: '+sumNumbers(numbers))
 
-
+/*
+method to separate strings according to a specific string
+params: str type string
+        delimiter type chart
+*/
 function separateChart(str, delimiter){
 	let separates = []
 	var separatesTemp = []
@@ -82,6 +81,10 @@ function separateChart(str, delimiter){
 separates.push(separatesTemp)
 return separates
 }
+/*
+method to join strings according to a specific array
+params: joins type array
+*/
 function joinCharts(joins){
   let joinsCharts = []
   for(i in joins){
@@ -94,10 +97,10 @@ function joinCharts(joins){
   }
   return joinsCharts
 }
+//The string
 str = 'this is the best'
+//delimiter is this case the delimiter is an espace ' '
 delimiter = ' '
-
-console.log(joinCharts(separateChart(str, delimiter)))
 
 document.getElementById('resultDel').innerHTML = joinCharts(separateChart(str, delimiter))
 
