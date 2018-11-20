@@ -36,7 +36,7 @@ lowerWord = {
 	word: 'prescrypto'
 }
 
-document.getElementById('resultUp').innerHTML = "ha"
+document.getElementById('resultUp').innerHTML = upperCase2(upperWord, alphabet);
 
 /*
 Arrow function 
