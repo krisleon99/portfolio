@@ -183,6 +183,7 @@ lowerWord = {
             <p>
              Write a function that determines the area of a circle given the radius
             </p>
+<code>//To find the area of a circle with an radius</code></br>
 <code>
 const calculateArea = (radius) => 
 </code>
@@ -201,34 +202,59 @@ Math.PI * Math.pow(radius,2)
           </div>
 <div class="section-intro">
             <p>
-             Write a function that determines if a string starts with an upper-case letter A to Z
+             Add up all the values in an array
             </p>
 <code>
-let alphabet =
+let areas = 
 </code>
 <code> 
-["A","B","C","D","E","F","G","H",
+ [2, 6, 8,123, 567, 89, 234]
 </code>
 <code>
-"I","J","K","L","M","N","O","P",
-</code>
-<code>
-"Q","R","S","U","V","W","X","Y","Z"]
-</code>
-<code>
-function isUperCase({word}, alphabet){
-</code>
-<code>
-	str = word[0]
+	let sum = 0
 </code><br>
 <code>
-	for(i in alphabet){
+	for(i in areas){
 </code><br>
 <code>
-		if(alphabet[i]===str){	
+		sum += areas[i]
+</code><br>
+<h4>as a parameter we test with:  [2, 6, 8,123, 567, 89, 234]' and the result is:</h4>
+<code> document.getElementById('resultSum').innerHTML = 
+</code>
+<code> ('The sum of array is: '+sum)</code>
+<div id="resultSum"></div>
+          </div>
+  <div class="section-intro">
+            <p>
+             Code a function that separates a String into substrings using a passable character and returns them in an ordered array
+            </p>
+<code>
+function separateChart(str, delimiter){
+</code>
+<code> 
+let separates = []
+</code></br>
+<code>
+var separatesTemp = []
+</code></br>
+<code>
+for(i in str){
+</code></br>
+<code>
+if(str[i]==delimiter){
+</code></br>
+<code>
+	separates.push(separatesTemp)	
 </code><br>
 <code>
-		 return true	
+	var separatesTemp = []
+</code><br>
+<code>
+		}else{
+</code><br>
+<code>
+		 separatesTemp.push(str[i])
 </code>	<br>
 <code>
 		}
@@ -237,51 +263,64 @@ function isUperCase({word}, alphabet){
 	}
 </code>	
 <code>
-	return false
+	separates.push(separatesTemp)
 </code>	<br>
 <code>
+return separates
+</code><br>
+<code>
 }
 </code><br>
 <code>
-const upperCase = word => 
+function joinCharts(joins){
+</code></br>
+<code>
+function joinCharts(joins){
+</code></br>
+<code>
+  let joinsCharts = []
 </code><br>
 <code>
-console.log(`${isUperCase(word, alphabet) 
-</code>
+  for(i in joins){
+</code></br>
 <code>
-? 'You string start with an upper-case':
-</code>
+let childs = ''
+</code></br>
 <code>
-'You string is not start with an upper-case'}`)
-</code><br>
-<code>
-let upperWord = {
-</code>
-<code>
-	word: 'Prescrypto', 
-</code>
-<code>
-}, 
-</code>
+for(x in joins[i]){
+</code></br>
 <code>
 lowerWord = {
 </code>
 <code>
-	word: 'prescrypto'
-lowerWord = {
-</code>
+ childs += joins[i][x] 
+</code></br>
 <code>
 }
 </code>
 <code>
- upperCase(upperWord, alphabet)
+  joinsCharts.push(childs)
 </code><br>
-
-<h4>as a parameter we test with: 'Prescrypto' and the result is:</h4>
-<code> document.getElementById('resultUp').innerHTML =
+<code>
+}
 </code>
-<code> upperCase2(upperWord, alphabet)</code>
-<div id="resultUp"></div>
+<code>
+return joinsCharts
+</code></br>
+<code>
+}
+</code>
+<code>
+let str = 'this is the best'
+</code></br>
+<code>
+delimiter = ' '
+</code></br>
+<h4>as a parameter we test with: 'this is the bes' and as a delimiter: ' ' and the result is:</h4>
+<code> document.getElementById('resultDel').innerHTML =
+</code>
+<code>joinCharts(separateChart(str, delimiter))</code>
+<div id="resultDel"></div>
           </div>
         </div>
       </div>

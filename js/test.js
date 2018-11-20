@@ -25,15 +25,21 @@ lowerWord = {
 
 document.getElementById('resultUp').innerHTML = upperCase2(upperWord, alphabet)
 
-
+//To find the area of a circle with an radius
 const calculateArea = (radius) => Math.PI * Math.pow(radius,2)
 console.log(`The area de circle is: ${calculateArea(2)}`)
 
 document.getElementById('resultArea').innerHTML = (`The area de circle is: ${calculateArea(2)}`)
 
 
-let areas = []
-areas.push(calculateArea(2))
+let areas = [2, 6, 8,123, 567, 89, 234]
+let sum = 0
+for(i in areas){
+   sum += areas[i]
+}
+console.log('Calues in arrary are: '+ sum)
+document.getElementById('resultSum').innerHTML = ('The sum of array is: '+sum)
+
 
 function separateChart(str, delimiter){
 	let separates = []
@@ -65,4 +71,8 @@ str = 'this is the best'
 delimiter = ' '
 
 console.log(joinCharts(separateChart(str, delimiter)))
+
+document.getElementById('resultDel').innerHTML = joinCharts(separateChart(str, delimiter))
+
+
 
