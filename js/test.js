@@ -92,8 +92,7 @@ function joinCharts(joins){
 	for(x in joins[i]){
 	   childs += joins[i][x] 
 	}
-	joinsCharts.push(childs)
-	 
+	joinsCharts.push(childs)	 
   }
   return joinsCharts
 }
@@ -103,6 +102,29 @@ str = 'this is the best'
 delimiter = ' '
 
 document.getElementById('resultDel').innerHTML = joinCharts(separateChart(str, delimiter))
+
+
+function factorial(n){
+if(n === 1){
+return 1
+
+}
+return n * factorial(n-1)
+}
+
+
+console.log("jiji")
+
+ var nombre = 'Sacha'
+    var apellido = 'Lifszyc'
+
+    function pasarAMayusculas(nombre) {
+      return nombre.toUpperCase()
+    }
+
+    pasarAMayusculas(nombre + ' ' + apellido)
+    pasarAMayusculas('Lucía')
+    pasarAMayusculas('')
 
 
 
