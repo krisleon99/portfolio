@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="animation.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto+Mono|Shadows+Into+Light" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="animation.js"></script>
+
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/platzi-logos.png" alt="kris logo">
+        kri
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">nube1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#guapa">nube2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">nube3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#guapa">nube4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /Header -->
+
+  <div class="container-fluid">
+    <div class="sol">
+      <div class="inner-cont">
+        <div class="item">
+            </div>
+            <div class="item">
+              Hey you!
+            </div>
+            <div class="item">
+            </div>
+      </div>
+    </div>
+
+
+    <div class="luna">
+            <div class="inner-cont">
+              <div class="item">
+              		</div>
+              		<div class="item" id="choko">
+                      Chokokriss
+              		</div>
+              		<div class="item">
+              		</div>
+            </div>
+    </div>
+
+  </div>
+
+  <div class="container-nubes">
+    <div class="nube nube1">
+      <div class="inner-cont-cloud">
+        <div class="item" id="nube1"  onclick="nube1()">
+          nube1
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+            </div>
+      </div>
+    </div>
+
+    <div class="nube nube2">
+      <div class="inner-cont-cloud">
+        <div class="item" onclick="nube2()">
+            nube2
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+            </div>
+      </div>
+    </div>
+
+    <div class="nube nube3">
+      <div class="inner-cont-cloud">
+        <div class="item">
+            nube3
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+      </div>
+    </div>
+
+    <div class="nube nube4">
+      <div class="inner-cont-cloud">
+        <div class="item">
+            nube4
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- section contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="headline">
+            <h3><span> me</span></h3>
+          </div>
+        </div>
+        <div class="span12">
+          <div class="section-intro">
+            <p>
+              No pus guau
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section contact -->
+  <!-- section contact -->
+  <section id="guapa" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="headline">
+            <h3><span>ga me</span></h3>
+          </div>
+        </div>
+        <div class="span12">
+          <div class="section-intro">
+            <p>
+            haha
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section contact -->
+
+  <script>
+  function nube1() {
+    document.getElementById("choko").innerHTML = "Paragraph changed.";
+    window.location.replace('#contact');
+  }
+  function nube2() {
+    window.location.replace('#guapa');
+  }
+  </script>
+</body>
+</html>
