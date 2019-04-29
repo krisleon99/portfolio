@@ -32,17 +32,19 @@
     }
     .cuadrado, .snow2, .snow3, .snow4, .snow5, .snow6, .snow7, .snow8 {
       height: 50px;
-      background: #30b8e0;
+      background: #fff;
       margin: 20px;
       animation-name: rebote;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
+
     }
     .cuadrado {
      animation-duration: 1.5s;
     }
    .snow2 { 
       animation-duration: 1s;    
+      animation-deling: 
     }
  .snow3 { 
       animation-duration: 700ms;    
@@ -65,7 +67,7 @@
     .cuadrado2 {
           height: 79px;
     width: 100px;
-    background: #30b8e0;
+    background: #fff;
     /* margin: 20px; */
     transform: rotate(45deg);
     margin-top: -12px;
@@ -73,6 +75,88 @@
       transform: rotate(45deg);
  
     }
+.meteoro{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    animation-name:meteoro ;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+        transform: rotate(-40deg);
+        animation-iteration-count: infinite;
+
+
+
+}
+.meteoro-cabeza{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation-name: cabeza-meteoro;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    box-shadow: 0px 0px 10px white;
+
+}
+.meteoro-cola{
+    position: absolute;
+        top: 2px;
+    left: 9px;
+    width: 100px;
+    height: 5px;
+    background: -webkit-linear-gradient(140deg, rgba(0,0,0,0), rgba(255,255,255,0.3));
+    background: linear-gradient(310deg, rgba(0,0,0,0), rgba(255,255,255,0.3));
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    animation-name: cola-meteoro;
+    animation-duration: .2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+    
+}
+
+@keyframes cabeza-meteoro{
+    from{
+        background-color: #9505e3;
+    }
+    to{
+        background-color: #a16ae8;
+    }
+}
+@keyframes cola-meteoro{
+    0%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes meteoro{
+   0% {
+    right:500;
+    top: 0px;
+       opacity: 0;
+}
+    20%{
+        opacity: 1;
+    }
+    100%{
+    right:1500px;
+    top: 1100px;
+        opacity: 0;
+    }
+
+}
+
     @keyframes cuadrado {
       0% {
         /*opacity: 1;*/
@@ -98,7 +182,7 @@
       }
       /*100%*/
       to {
-        transform: translateY(500px) skew(10deg) scale(.01) rotate(180deg);
+        transform: translateY(900px) skew(10deg) scale(.01) rotate(180deg);
       }
     }
   </style>
@@ -147,6 +231,10 @@
     </div>
 
   </div>
+   <div class="meteoro" id="meteoro">
+                    <div class="meteoro-cabeza" id="cabeza"></div>
+                    <div class="meteoro-cola" id="cola"></div>
+                </div>
   <script>
     const $cuadrado = document.getElementById('cuadrado');
     // $cuadrado.addEventListener('nombre del event', 'que hago cuando el evento ocurra')
