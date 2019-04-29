@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snow</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+     [class*="col-"] {
+	float: left;
+  	padding: 15px;
+	 
+     }
+
+    .col-1 {width: 8.33%;}
+    .container {
+  
+      width: 100%;
+      height: 500px;
+    }
+    /*.cuadrado:hover {*/
+    .container:hover .cuadrado {
+      animation-play-state: paused;
+    }
+    .cuadrado, .snow2, .snow3, .snow4, .snow5, .snow6, .snow7, .snow8 {
+      height: 50px;
+      background: #30b8e0;
+      margin: 20px;
+      animation-name: rebote;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    .cuadrado {
+     animation-duration: 1.5s;
+    }
+   .snow2 { 
+      animation-duration: 1s;    
+    }
+ .snow3 { 
+      animation-duration: 700ms;    
+    }
+ .snow4 { 
+      animation-duration: 1500ms;    
+    }
+ .snow5 { 
+      animation-duration: 1200ms;    
+    }
+ .snow6 { 
+      animation-duration: 1350ms;    
+    }
+ .snow7 { 
+      animation-duration: 3s;    
+    }
+ .snow8 { 
+      animation-duration: 2s;    
+    }
+    .cuadrado2 {
+          height: 79px;
+    width: 100px;
+    background: #30b8e0;
+    /* margin: 20px; */
+    transform: rotate(45deg);
+    margin-top: -12px;
+    margin-left: -12px;
+      transform: rotate(45deg);
+ 
+    }
+    @keyframes cuadrado {
+      0% {
+        /*opacity: 1;*/
+        left: 0;
+      }
+      100% {
+        /*opacity: 0;*/
+        left: calc(100% - 90px);
+      }
+    }
+    @keyframes escalera {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(500px);
+      }
+    }
+    @keyframes rebote {
+      /*0% {*/
+      from {
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+      /*100%*/
+      to {
+        transform: translateY(500px) skew(10deg) scale(.01) rotate(180deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="snow2 col-1" id="cuadrado">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow3 col-1">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow4 col-1">
+       <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow5 col-1">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow6 col-1">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow7 col-1">
+       <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="snow8 col-1">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+ <div class="cuadrado col-1">
+      <div class="cuadrado2">
+      ja
+    </div>
+    </div>
+
+  </div>
+  <script>
+    const $cuadrado = document.getElementById('cuadrado');
+    // $cuadrado.addEventListener('nombre del event', 'que hago cuando el evento ocurra')
+    // $cuadrado.addEventListener('animationstart', (event) => {
+    // $cuadrado.addEventListener('animationiteration', (event) => {
+    $cuadrado.addEventListener('animationend', (event) => {
+      // console.log(event.animationName);
+      if (event.animationName === 'rebote') {
+        $cuadrado.style.animationName = 'cuadrado escalera';
+        $cuadrado.style.animationDuration = '3s';
+      }
+    });
+  </script>
+</body>
+</html>
+
