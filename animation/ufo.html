@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sky</title>
+  <title>ufo</title>
   <style>
     body {
       background-color: black;
@@ -14,68 +14,60 @@
       color: white;
       font-family: Arial;
     }
-     [class*="col-"] {
-	float: left;
-  	padding: 15px;
-	 
+    [class*="col-"] {
+	 float: left;
+  	 padding: 15px;
      }
-
     .col-1 {width: 8.33%;}
     .container {
-  
       width: 100%;
       height: 500px;
     }
-    /*.cuadrado:hover {*/
-    .container:hover .cuadrado {
-      animation-play-state: paused;
-    }
-    .cuadrado, .snow2, .snow3, .snow4, .snow5, .snow6, .snow7, .snow8 {
+    .sky, .snow2, .snow3, .snow4, .snow5, .snow6, .snow7, .snow8 {
       height: 50px;
       background: #fff;
       margin: 20px;
       animation-name: rebote;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
-
     }
-    .cuadrado {
+    .sky {
      animation-duration: 1.5s;
     }
    .snow2 { 
       animation-duration: 1s;    
       animation-deling: 
     }
- .snow3 { 
+    .snow3 { 
       animation-duration: 700ms;    
-    }
- .snow4 { 
+        }
+    .snow4 { 
       animation-duration: 1500ms;    
-    }
- .snow5 { 
+        }
+    .snow5 { 
       animation-duration: 1200ms;    
-    }
- .snow6 { 
+        }
+    .snow6 { 
       animation-duration: 1350ms;    
-    }
- .snow7 { 
+        }
+    .snow7 { 
       animation-duration: 3s;    
-    }
- .snow8 { 
+        }
+    .snow8 { 
       animation-duration: 2s;    
-    }
-    .cuadrado2 {
-          height: 79px;
+        }
+.sky2 {
+    height: 79px;
     width: 100px;
     background: #fff;
     /* margin: 20px; */
     transform: rotate(45deg);
     margin-top: -12px;
     margin-left: -12px;
-      transform: rotate(45deg);
+    transform: rotate(45deg);
  
     }
-.planet {
+.luna {
     margin: 0 auto;
     width: 200px;
     height: 200px;
@@ -86,6 +78,22 @@
     overflow: hidden;
    transition: 5s; 
 }
+.meteorito{
+   z-index: 99;
+   width: 37px;
+   height: 42px;
+   cursor: pointer;
+   background-image: url("../img/sprints/meteoro.png");
+   background-size: 352px 176px;
+   background-position: 0 0;
+   animation-name: meteorito-rotate, meteorito;
+   animation-duration: 1s, 2s;
+   animation-iteration-count: infinite;
+   animation-timing-function: steps(10), ease;
+   animation-fill-mode: forwards;
+
+   
+}
 .ufo{
     z-index: 999;
     width: 37px;
@@ -93,13 +101,24 @@
     cursor: pointer;
    background-image: url("../img/sprints/UFO.png");
    background-size: 250px 348px;
-   animation-name: rotacion, ufo;
-   animation-duration: 2s, 10s;
-   animation-iteration-count: infinite, 1;
-   animation-timing-function: steps(6), ease;
+   animation-name: rotacion;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-timing-function: steps(6);
+ 
+    
+}
+.ufo: hover{
+   animation-name: ufo;
+   animation-duration: 10s;
+   animation-iteration-count: 1;
+   animation-timing-function: ease;
+}
+.meteorito:hover .meteorito{
+   animation-play-state: paused;
 }
 
-.planet:before {
+.luna:before {
     content: '';
     border-radius: 100%;
     width: 12%;
@@ -112,11 +131,11 @@
 
 }
 
-.planet:hover {
+.luna:hover {
     transform: translateY(100px) scale(2) rotate(180deg);
 
 }
-.planet:after {
+.luna:after {
     content: '';
     border-radius: 100%;
     width: 25%;
@@ -128,84 +147,7 @@
     box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.2);
 
 }
-.meteoro{
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    animation-name:meteoro ;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-fill-mode:forwards;
-        transform: rotate(-40deg);
-        animation-iteration-count: infinite;
-}
-.meteoro-cabeza{
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    animation-name: cabeza-meteoro;
-    animation-duration: .6s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-    box-shadow: 0px 0px 10px white;
-
-}
-.meteoro-cola{
-    position: absolute;
-        top: 2px;
-    left: 9px;
-    width: 100px;
-    height: 5px;
-    background: -webkit-linear-gradient(140deg, rgba(0,0,0,0), rgba(255,255,255,0.3));
-    background: linear-gradient(310deg, rgba(0,0,0,0), rgba(255,255,255,0.3));
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    animation-name: cola-meteoro;
-    animation-duration: .2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: backwards;
-    
-}
-
-@keyframes cabeza-meteoro{
-    from{
-        background-color: #9505e3;
-    }
-    to{
-        background-color: #a16ae8;
-    }
-}
-@keyframes cola-meteoro{
-    0%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 0.5;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-@keyframes meteoro{
-   0% {
-    right:500;
-    top: 0px;
-       opacity: 0;
-}
-    20%{
-        opacity: 1;
-    }
-    100%{
-    right:1500px;
-    top: 1100px;
-        opacity: 0;
-    }
-
-}
+ 
 @keyframes luna{
    from {
         transform: translateY(0) scale(1) rotate(0deg);
@@ -243,6 +185,15 @@
        background-position-y: 4px;
     }
 }
+@keyframes meteorito-rotate{
+    0%{
+       background-position-x: 31.6px;
+       background-position-y: 0px;
+    }100%{
+       background-position-x: right;
+       background-position-y: 0px;
+    }
+}
 @keyframes shoot{
     0%{
        height: 200px;
@@ -253,6 +204,17 @@
     100%{
        background-position-x: right;
        background-position-y: 4px;
+    }
+}
+@keyframes meteorito{
+   0%{
+	transform: translateX(0px) translateY(0px);
+   }99%{
+	transform: translateX(900px) translateY(300px);
+        opacity:1;
+    }100%{
+	transform: translateX(900px) translateY(300px);
+        opacity:0;
     }
 }
 @keyframes ufo{
@@ -274,7 +236,7 @@
 	transform: translateX(-300px) translateY(500px);
     }100%{
 	opacity: 0;
-	transform: translateX(-300px) translateY(600px);
+	transform: translateX(-300px) translateY(800px);
 	}
 }
     @keyframes rebote {
@@ -301,73 +263,79 @@
 </head>
 <body>
   <div class="container">
-    <div class="snow2 col-1" id="cuadrado">
-      <div class="cuadrado2">
-      ja
+    <div class="snow2 col-1">
+      <div class="sky2"></div>
     </div>
+ <div class="col-1">
+    <div class="meteorito"></div>
     </div>
  <div class="snow3 col-1">
-      <div class="cuadrado2">
-      ja
+      <div class="sky2">
     </div>
     </div>
  <div class="snow4 col-1">
-       <div class="cuadrado2">
-      ja
+       <div class="sky2">
     </div>
     </div>
  <div class="snow5 col-1">
-      <div class="cuadrado2">
-      ja
+      <div class="sky2">
     </div>
     </div>
  <div class="snow6 col-1">
-      <div class="cuadrado2">
-      ja
+      <div class="sky2">
     </div>
     </div>
  <div class="col-1">
-    <div class="ufo"></div>
+    <div class="ufo" id="ufo"></div>
     </div>
- 
-   <div class="col-1 planets">
-                        <div class="planet"></div>
-                </div>
+   <div class="col-1">
+        <div class="luna"></div>
+   </div>
  <div class="snow7 col-1">
-       <div class="cuadrado2">
-      ja
+       <div class="sky2">
     </div>
     </div>
  <div class="snow8 col-1">
-      <div class="cuadrado2">
-      ja
+      <div class="sky2">
     </div>
     </div>
- <div class="cuadrado col-1">
-      <div class="cuadrado2">
-      ja
+ <div class="sky col-1">
+      <div class="sky2">
     </div>
     </div>
-
-
-  <div class="meteoro" id="meteoro">
-                    <div class="meteoro-cabeza" id="cabeza"></div>
-                    <div class="meteoro-cola" id="cola"></div>
-                </div>
-
   </div>
- 
   <script>
-    const $cuadrado = document.getElementById('cuadrado');
-    // $cuadrado.addEventListener('nombre del event', 'que hago cuando el evento ocurra')
-    // $cuadrado.addEventListener('animationstart', (event) => {
-    // $cuadrado.addEventListener('animationiteration', (event) => {
-    $cuadrado.addEventListener('animationend', (event) => {
-      // console.log(event.animationName);
-      if (event.animationName === 'rebote') {
-        $cuadrado.style.animationName = 'cuadrado escalera';
-        $cuadrado.style.animationDuration = '3s';
-      }
+    const $ufo = document.getElementById('ufo');
+    $ufo.addEventListener('click', (event) => {
+      $ufo.animate([
+           {
+            transform: 'translateX(200px) translateY(0px)'
+            },
+            {
+            transform: 'translateX(-10px) translateY(0px)'
+            },
+            {
+            transform: 'translateX(100px) translateY(200px)'
+            },
+            {
+            transform: 'translateX(-300px) translateY(400px)'
+            },
+            {
+            transform: 'translateX(-300px) translateY(500px)'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)'
+            }
+      ],{
+          duration: 10000,
+          delay: 1000,
+          direction: 'alternate',
+          easing: 'ease',
+          iteration: 1,
+          fill: 'forwards',
+          iterationStart: .3,
+          endDelay: 3000
+      })  
     });
   </script>
 </body>
