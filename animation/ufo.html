@@ -91,8 +91,31 @@
    animation-iteration-count: infinite;
    animation-timing-function: steps(10), ease;
    animation-fill-mode: forwards;
-
-   
+}
+.meteorito2{
+   z-index: 99;
+   width: 41px;
+   height: 62px;
+   cursor: pointer;
+   background-image: url("../img/sprints/meteoroboom.png");
+   background-position: 0 0;
+  
+   transform: translateY(771px) translateX(-295px);
+   opacity: 1;
+}
+.ufo2{
+   z-index: 999;
+   width: 37px;
+   height: 216px;
+   cursor: pointer;
+   background-image: url("../img/sprints/UFO.png");
+   background-size: 250px 348px;
+   animation-name: rotacion-shoot;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-timing-function: steps(6);
+   transform: translateY(565px) translateX(-179px);
+   opacity: 0;
 }
 .ufo{
     z-index: 999;
@@ -185,9 +208,29 @@
        background-position-y: 4px;
     }
 }
+@keyframes rotacion-shoot{
+    0%{
+       background-position-x: 41.75px;
+       background-position-y: -56px;
+    }
+
+    100%{
+       background-position-x: right;
+       background-position-y: -56px;
+    }
+}
 @keyframes meteorito-rotate{
     0%{
        background-position-x: 31.6px;
+       background-position-y: 0px;
+    }100%{
+       background-position-x: right;
+       background-position-y: 0px;
+    }
+}
+@keyframes meteorito-boom{
+    0%{
+       background-position-x: 37px;
        background-position-y: 0px;
     }100%{
        background-position-x: right;
@@ -266,78 +309,138 @@
     <div class="snow2 col-1">
       <div class="sky2"></div>
     </div>
- <div class="col-1">
-    <div class="meteorito"></div>
+    <div class="col-1">
+        <div class="meteorito"></div>
     </div>
- <div class="snow3 col-1">
-      <div class="sky2">
+     <div class="snow3 col-1">
+          <div class="sky2"></div>
     </div>
+     <div class="snow4 col-1">
+           <div class="sky2"></div>
     </div>
- <div class="snow4 col-1">
-       <div class="sky2">
+     <div class="col-1">
+        <div class="ufo" id="ufo"></div>
     </div>
-    </div>
- 
- <div class="snow6 col-1">
-      <div class="sky2">
-    </div>
-    </div>
- <div class="col-1">
-    <div class="ufo" id="ufo"></div>
-    </div>
-   <div class="col-1">
+    <div class="col-1">
         <div class="luna"></div>
-   </div>
- <div class="snow7 col-1">
-       <div class="sky2">
     </div>
+     <div class="snow7 col-1">
+           <div class="sky2"></div>
     </div>
- <div class="snow8 col-1">
-      <div class="sky2">
-    </div>
+     <div class="snow8 col-1">
+          <div class="sky2"></div>
     </div>
     <div class="snow5 col-1">
-      <div class="sky2">
+          <div class="sky2"></div>
     </div>
+     <div class="snow6 col-1">
+          <div class="sky2">
+        </div>
     </div>
- <div class="sky col-1">
-      <div class="sky2">
+     <div class="sky col-1">
+          <div class="sky2">
+        </div>
     </div>
+    <div class="col-1">
+        <div class="ufo2" id="ufo2"></div>
+    </div>
+    <div class="col-1">
+        <div class="meteorito2" id="meteoro2"></div>
     </div>
   </div>
   <script>
-    const $ufo = document.getElementById('ufo');
-    $ufo.addEventListener('click', (event) => {
-      $ufo.animate([
-           {
-            transform: 'translateX(200px) translateY(0px)'
+      
+    const keyframes = [ {
+            transform: 'translateX(200px) translateY(0px)', opacity: '1'
             },
             {
-            transform: 'translateX(-10px) translateY(0px)'
+            transform: 'translateX(-10px) translateY(0px)', opacity: '1'
             },
             {
-            transform: 'translateX(100px) translateY(200px)'
+            transform: 'translateX(100px) translateY(200px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(400px)'
+            transform: 'translateX(-300px) translateY(400px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(500px)'
+            transform: 'translateX(-300px) translateY(500px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)'
-            }
-      ],{
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            },
+            {
+            transform: 'translateX(-200px) translateY(800px)', opacity: '1'
+            }];
+    const options = {
           duration: 10000,
-          delay: 1000,
+          delay: 0,
           direction: 'alternate',
           easing: 'ease',
           iteration: 1,
           fill: 'forwards',
-          iterationStart: .3,
+          iterationStart: 0,
           endDelay: 3000
-      })  
+      }
+      
+    const $ufo2 = document.getElementById('ufo2');
+    const $ufo = document.getElementById('ufo');
+    const $meteoro2 = document.getElementById('meteoro2');
+    $ufo.addEventListener('click', (event) => {
+      $ufo.animate(keyframes,options)  
+     $ufo2.animate([
+         {
+          opacity: '0'
+         },
+         {
+          opacity: '1'  
+         }
+     ],{
+          duration: 5000,
+          delay: 2000,
+          direction: 'alternate',
+          easing: 'ease',
+          iteration: 1,
+          iterationStart: 0,
+          endDelay: 3000
+      })
+        
+    $meteoro2.animate([
+         {
+          backgroundPosition: '37px 0px'
+         },
+         {
+          backgroundPosition: 'right'
+         }
+     ],{
+          duration: 3000,
+          delay: 4000,
+          direction: 'alternate',
+          easing: 'steps(10)',
+          iteration: 1,
+          iterationStart: 0,
+          endDelay: 13000
+      })
     });
+      
+    
   </script>
 </body>
 </html>
