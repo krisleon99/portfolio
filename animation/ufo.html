@@ -34,27 +34,27 @@
     .sky {
      animation-duration: 1.5s;
     }
-   .snow2 { 
-      animation-duration: 1s;    
-      animation-deling: 
+   .snow2 {
+      animation-duration: 1s;
+      animation-deling:
     }
-    .snow3 { 
-      animation-duration: 700ms;    
+    .snow3 {
+      animation-duration: 700ms;
         }
-    .snow4 { 
-      animation-duration: 1500ms;    
+    .snow4 {
+      animation-duration: 1500ms;
         }
-    .snow5 { 
-      animation-duration: 1200ms;    
+    .snow5 {
+      animation-duration: 1200ms;
         }
-    .snow6 { 
-      animation-duration: 1350ms;    
+    .snow6 {
+      animation-duration: 1350ms;
         }
-    .snow7 { 
-      animation-duration: 3s;    
+    .snow7 {
+      animation-duration: 3s;
         }
-    .snow8 { 
-      animation-duration: 2s;    
+    .snow8 {
+      animation-duration: 2s;
         }
 .sky2 {
     height: 79px;
@@ -65,7 +65,7 @@
     margin-top: -12px;
     margin-left: -12px;
     transform: rotate(45deg);
- 
+
     }
 .luna {
     margin: 0 auto;
@@ -76,7 +76,7 @@
     background: #C0C0C0;
     box-shadow: inset -30px -30px 0px #a9a9a9;
     overflow: hidden;
-   transition: 5s; 
+   transition: 5s;
 }
 .meteorito{
    z-index: 99;
@@ -87,10 +87,7 @@
    background-size: 352px 176px;
    background-position: 0 0;
    animation-name: meteorito-rotate, meteorito;
-   animation-duration: 1s, 2s;
    animation-iteration-count: infinite;
-   animation-timing-function: steps(10), ease;
-   animation-fill-mode: forwards;
 }
 .meteorito2{
    z-index: 99;
@@ -99,10 +96,62 @@
    cursor: pointer;
    background-image: url("../img/sprints/meteoroboom.png");
    background-position: 0 0;
-  
-   transform: translateY(771px) translateX(-295px);
    opacity: 1;
 }
+.meteorito1{
+  animation-duration: 1s, 2s;
+  animation-delay: 1s;
+  animation-timing-function: steps(10), ease-in;
+  animation-fill-mode: backwards;
+}
+.meteorito3{
+  animation-duration: 1s, 2s;
+  animation-timing-function: steps(10), ease;
+  animation-fill-mode: forwards;
+}
+.meteorito4{
+  animation-duration: 1s, 2s;
+  animation-delay: 800ms;
+  animation-timing-function: steps(10), ease-in-out;
+  animation-fill-mode: both;
+}
+.meteorito5{
+  animation-duration: 1s, 2s;
+  animation-delay: 1500ms;
+  animation-timing-function: steps(10), ease-out;
+  animation-fill-mode: forwards;
+}
+.meteorito6{
+  animation-duration: 1s, 2s;
+  animation-delay: 500ms;
+  animation-timing-function: steps(10), cubic-bezier(1,-0.04,0,.81);
+  animation-fill-mode: none;
+}
+.meteorito7{
+  animation-duration: 500ms, 1500ms;
+  animation-delay: 100ms;
+  animation-timing-function: steps(10), cubic-bezier(1,-0.04,1,.46);
+  animation-fill-mode: none;
+}
+.meteorito8{
+  animation-duration: 200ms, 800ms;
+  animation-delay: 100ms;
+  animation-timing-function: steps(10), cubic-bezier(0,1.95,.02,1.03);
+  animation-fill-mode: none;
+}
+.meteorito9{
+  animation-duration: 1200ms, 1700ms;
+  animation-delay: 800ms;
+  animation-timing-function: steps(10), ease;
+  animation-fill-mode: none;
+}
+.meteorito10{
+  animation-duration: 1500ms, 1500ms;
+  animation-delay: 0ms;
+  animation-timing-function: steps(10), cubic-bezier(0,1.95,1,-0.61);
+  animation-fill-mode: none;
+}
+
 .ufo2{
    z-index: 999;
    width: 37px;
@@ -114,7 +163,6 @@
    animation-duration: 2s;
    animation-iteration-count: infinite;
    animation-timing-function: steps(6);
-   transform: translateY(565px) translateX(-179px);
    opacity: 0;
 }
 .ufo{
@@ -128,8 +176,8 @@
    animation-duration: 2s;
    animation-iteration-count: infinite;
    animation-timing-function: steps(6);
- 
-    
+
+
 }
 .ufo: hover{
    animation-name: ufo;
@@ -170,7 +218,7 @@
     box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.2);
 
 }
- 
+
 @keyframes luna{
    from {
         transform: translateY(0) scale(1) rotate(0deg);
@@ -202,7 +250,7 @@
        background-position-x: 41.75px;
        background-position-y: 4px;
     }
-   
+
     100%{
        background-position-x: right;
        background-position-y: 4px;
@@ -243,7 +291,7 @@
        background-position-x: 41.75px;
        background-position-y: 133px;
     }
-   
+
     100%{
        background-position-x: right;
        background-position-y: 4px;
@@ -262,7 +310,7 @@
 }
 @keyframes ufo{
     0%{
-        
+
 	opacity: 1;
 	transform: translateX(200px) translateY(0px);
     }30%{
@@ -306,17 +354,17 @@
 </head>
 <body>
   <div class="container">
-    <div class="snow2 col-1">
-      <div class="sky2"></div>
+    <div class="col-1">
+      <div class="meteorito meteorito3"></div>
     </div>
     <div class="col-1">
-        <div class="meteorito"></div>
+        <div class="meteorito meteorito1"></div>
     </div>
-     <div class="snow3 col-1">
-          <div class="sky2"></div>
+     <div class="col-1">
+        <div class="meteorito meteorito4"></div>
     </div>
-     <div class="snow4 col-1">
-           <div class="sky2"></div>
+     <div class="col-1">
+           <div class="meteorito meteorito5"></div>
     </div>
      <div class="col-1">
         <div class="ufo" id="ufo"></div>
@@ -324,21 +372,21 @@
     <div class="col-1">
         <div class="luna"></div>
     </div>
-     <div class="snow7 col-1">
-           <div class="sky2"></div>
+     <div class="col-1">
+        <div class="meteorito meteorito6"></div>
     </div>
-     <div class="snow8 col-1">
-          <div class="sky2"></div>
+     <div class="col-1">
+          <div class="meteorito meteorito10"></div>
     </div>
-    <div class="snow5 col-1">
-          <div class="sky2"></div>
+    <div class="col-1">
+          <div class="meteorito meteorito9"></div>
     </div>
-     <div class="snow6 col-1">
-          <div class="sky2">
+     <div class="col-1">
+          <div class="meteorito meteorito7"></div>
         </div>
     </div>
-     <div class="sky col-1">
-          <div class="sky2">
+     <div class="col-1">
+          <div class="meteorito meteorito8"></div>
         </div>
     </div>
     <div class="col-1">
@@ -349,7 +397,7 @@
     </div>
   </div>
   <script>
-      
+    const hei = window.innerHeight;
     const keyframes = [ {
             transform: 'translateX(200px) translateY(0px)', opacity: '1'
             },
@@ -357,37 +405,37 @@
             transform: 'translateX(-10px) translateY(0px)', opacity: '1'
             },
             {
-            transform: 'translateX(100px) translateY(200px)', opacity: '1'
+            transform: 'translateX(100px) translateY('+hei/3+'px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(400px)', opacity: '1'
+            transform: 'translateX(-300px) translateY('+hei/2+'px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(500px)', opacity: '1'
+            transform: 'translateX(-300px) translateY('+hei/2+50+'px)', opacity: '1'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-300px) translateY(800px)', opacity: '0'
+            transform: 'translateX(-300px) translateY('+hei/2+100+'px)', opacity: '0'
             },
             {
-            transform: 'translateX(-200px) translateY(800px)', opacity: '1'
+            transform: 'translateX(-200px) translateY('+hei/2+100+'px)', opacity: '1'
             }];
     const options = {
           duration: 10000,
@@ -399,18 +447,20 @@
           iterationStart: 0,
           endDelay: 3000
       }
-      
+
     const $ufo2 = document.getElementById('ufo2');
     const $ufo = document.getElementById('ufo');
     const $meteoro2 = document.getElementById('meteoro2');
     $ufo.addEventListener('click', (event) => {
-      $ufo.animate(keyframes,options)  
-     $ufo2.animate([
+    $ufo.animate(keyframes,options)
+    $ufo2.animate([
          {
+          transform: 'translateY('+hei/7+'px) translateX(-179px)',
           opacity: '0'
          },
          {
-          opacity: '1'  
+          transform: 'translateY('+hei/7+'px) translateX(-179px)',
+          opacity: '1'
          }
      ],{
           duration: 5000,
@@ -421,12 +471,14 @@
           iterationStart: 0,
           endDelay: 3000
       })
-        
+
     $meteoro2.animate([
          {
+          transform: 'translateY('+hei/2+'px) translateX(-295px)',
           backgroundPosition: '37px 0px'
          },
          {
+          transform: 'translateY('+hei/2+'px) translateX(-295px)',
           backgroundPosition: 'right'
          }
      ],{
@@ -439,9 +491,8 @@
           endDelay: 13000
       })
     });
-      
-    
+
+
   </script>
 </body>
 </html>
-
