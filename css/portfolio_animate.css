@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow: auto;
 }
 .text-k {
   color: #3690c0 !important;

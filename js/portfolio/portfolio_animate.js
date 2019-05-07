@@ -1,9 +1,6 @@
 const $more = document.getElementById("more-gis");
 const $gis = document.getElementById("gis");
 const $less = document.getElementById("less-gis");
-const hei = window.innerHeight;
-const $container = document.querySelector('.container2');
-$container.style.height = hei+'px';
 
 function display(id, status){
   id.style.display = status;
