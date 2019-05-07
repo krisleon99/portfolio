@@ -34,27 +34,27 @@
     .sky {
      animation-duration: 1.5s;
     }
-   .snow2 { 
-      animation-duration: 1s;    
-      animation-deling: 
+   .snow2 {
+      animation-duration: 1s;
+      animation-deling:
     }
-    .snow3 { 
-      animation-duration: 700ms;    
+    .snow3 {
+      animation-duration: 700ms;
         }
-    .snow4 { 
-      animation-duration: 1500ms;    
+    .snow4 {
+      animation-duration: 1500ms;
         }
-    .snow5 { 
-      animation-duration: 1200ms;    
+    .snow5 {
+      animation-duration: 1200ms;
         }
-    .snow6 { 
-      animation-duration: 1350ms;    
+    .snow6 {
+      animation-duration: 1350ms;
         }
-    .snow7 { 
-      animation-duration: 3s;    
+    .snow7 {
+      animation-duration: 3s;
         }
-    .snow8 { 
-      animation-duration: 2s;    
+    .snow8 {
+      animation-duration: 2s;
         }
 .sky2 {
     height: 79px;
@@ -65,7 +65,7 @@
     margin-top: -12px;
     margin-left: -12px;
     transform: rotate(45deg);
- 
+
     }
 .luna {
     margin: 0 auto;
@@ -76,7 +76,7 @@
     background: #C0C0C0;
     box-shadow: inset -30px -30px 0px #a9a9a9;
     overflow: hidden;
-   transition: 5s; 
+   transition: 5s;
 }
 .meteorito{
    z-index: 99;
@@ -99,7 +99,7 @@
    cursor: pointer;
    background-image: url("../img/sprints/meteoroboom.png");
    background-position: 0 0;
-  
+
    transform: translateY(771px) translateX(-295px);
    opacity: 1;
 }
@@ -128,8 +128,8 @@
    animation-duration: 2s;
    animation-iteration-count: infinite;
    animation-timing-function: steps(6);
- 
-    
+
+
 }
 .ufo: hover{
    animation-name: ufo;
@@ -170,7 +170,7 @@
     box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.2);
 
 }
- 
+
 @keyframes luna{
    from {
         transform: translateY(0) scale(1) rotate(0deg);
@@ -202,7 +202,7 @@
        background-position-x: 41.75px;
        background-position-y: 4px;
     }
-   
+
     100%{
        background-position-x: right;
        background-position-y: 4px;
@@ -243,7 +243,7 @@
        background-position-x: 41.75px;
        background-position-y: 133px;
     }
-   
+
     100%{
        background-position-x: right;
        background-position-y: 4px;
@@ -262,7 +262,7 @@
 }
 @keyframes ufo{
     0%{
-        
+
 	opacity: 1;
 	transform: translateX(200px) translateY(0px);
     }30%{
@@ -306,50 +306,31 @@
 </head>
 <body>
   <div class="container">
-    <div class="snow2 col-1">
-      <div class="sky2"></div>
-    </div>
     <div class="col-1">
-        <div class="meteorito"></div>
-    </div>
-     <div class="snow3 col-1">
-          <div class="sky2"></div>
-    </div>
-     <div class="snow4 col-1">
-           <div class="sky2"></div>
+        <div class="meteorito meteorito3"></div>
+          <div class="meteorito meteorito1"></div>
+          <div class="meteorito meteorito4"></div>
+           <div class="meteorito meteorito5"></div>
+          <div class="meteorito meteorito6"></div>
+          <div class="meteorito meteorito10"></div>
+          <div class="meteorito meteorito9"></div>
+          <div class="meteorito meteorito7"></div>
+          <div class="meteorito meteorito8"></div>
     </div>
      <div class="col-1">
         <div class="ufo" id="ufo"></div>
     </div>
     <div class="col-1">
+      <div class="ufo2" id="ufo2"></div>
+    </div>
+    <div class="col-1">
+      <div class="meteorito2" id="meteoro2"></div>
+    </div>
+    <div class="col-1">
         <div class="luna"></div>
-    </div>
-     <div class="snow7 col-1">
-           <div class="sky2"></div>
-    </div>
-     <div class="snow8 col-1">
-          <div class="sky2"></div>
-    </div>
-    <div class="snow5 col-1">
-          <div class="sky2"></div>
-    </div>
-     <div class="snow6 col-1">
-          <div class="sky2">
-        </div>
-    </div>
-     <div class="sky col-1">
-          <div class="sky2">
-        </div>
-    </div>
-    <div class="col-1">
-        <div class="ufo2" id="ufo2"></div>
-    </div>
-    <div class="col-1">
-        <div class="meteorito2" id="meteoro2"></div>
     </div>
   </div>
   <script>
-      
     const keyframes = [ {
             transform: 'translateX(200px) translateY(0px)', opacity: '1'
             },
@@ -399,18 +380,18 @@
           iterationStart: 0,
           endDelay: 3000
       }
-      
+
     const $ufo2 = document.getElementById('ufo2');
     const $ufo = document.getElementById('ufo');
     const $meteoro2 = document.getElementById('meteoro2');
     $ufo.addEventListener('click', (event) => {
-      $ufo.animate(keyframes,options)  
+      $ufo.animate(keyframes,options)
      $ufo2.animate([
          {
           opacity: '0'
          },
          {
-          opacity: '1'  
+          opacity: '1'
          }
      ],{
           duration: 5000,
@@ -421,7 +402,7 @@
           iterationStart: 0,
           endDelay: 3000
       })
-        
+
     $meteoro2.animate([
          {
           backgroundPosition: '37px 0px'
@@ -439,9 +420,8 @@
           endDelay: 13000
       })
     });
-      
-    
+
+
   </script>
 </body>
 </html>
-
