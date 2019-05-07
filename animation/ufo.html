@@ -96,6 +96,8 @@
    cursor: pointer;
    background-image: url("../img/sprints/meteoroboom.png");
    background-position: 0 0;
+
+   transform: translateY(771px) translateX(-295px);
    opacity: 1;
 }
 .meteorito1{
@@ -163,6 +165,7 @@
    animation-duration: 2s;
    animation-iteration-count: infinite;
    animation-timing-function: steps(6);
+   transform: translateY(565px) translateX(-179px);
    opacity: 0;
 }
 .ufo{
@@ -354,50 +357,30 @@
 <body>
   <div class="container">
     <div class="col-1">
-      <div class="meteorito meteorito3"></div>
-    </div>
-    <div class="col-1">
-        <div class="meteorito meteorito1"></div>
-    </div>
-     <div class="col-1">
-        <div class="meteorito meteorito4"></div>
-    </div>
-     <div class="col-1">
+        <div class="meteorito meteorito3"></div>
+          <div class="meteorito meteorito1"></div>
+          <div class="meteorito meteorito4"></div>
            <div class="meteorito meteorito5"></div>
+          <div class="meteorito meteorito6"></div>
+          <div class="meteorito meteorito10"></div>
+          <div class="meteorito meteorito9"></div>
+          <div class="meteorito meteorito7"></div>
+          <div class="meteorito meteorito8"></div>
     </div>
      <div class="col-1">
         <div class="ufo" id="ufo"></div>
     </div>
     <div class="col-1">
+      <div class="ufo2" id="ufo2"></div>
+    </div>
+    <div class="col-1">
+      <div class="meteorito2" id="meteoro2"></div>
+    </div>
+    <div class="col-1">
         <div class="luna"></div>
-    </div>
-     <div class="col-1">
-        <div class="meteorito meteorito6"></div>
-    </div>
-     <div class="col-1">
-          <div class="meteorito meteorito10"></div>
-    </div>
-    <div class="col-1">
-          <div class="meteorito meteorito9"></div>
-    </div>
-     <div class="col-1">
-          <div class="meteorito meteorito7"></div>
-        </div>
-    </div>
-     <div class="col-1">
-          <div class="meteorito meteorito8"></div>
-        </div>
-    </div>
-    <div class="col-1">
-        <div class="ufo2" id="ufo2"></div>
-    </div>
-    <div class="col-1">
-        <div class="meteorito2" id="meteoro2"></div>
     </div>
   </div>
   <script>
-    const hei = window.innerHeight;
-    const wi = window.innerWidth;
     const keyframes = [ {
             transform: 'translateX(200px) translateY(0px)', opacity: '1'
             },
@@ -405,37 +388,37 @@
             transform: 'translateX(-10px) translateY(0px)', opacity: '1'
             },
             {
-            transform: 'translateX(100px) translateY('+hei/3+'px)', opacity: '1'
+            transform: 'translateX(100px) translateY(10px)', opacity: '1'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+'px)', opacity: '1'
+            transform: 'translateX(300px) translateY(100px)', opacity: '1'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+50+'px)', opacity: '1'
+            transform: 'translateX(300px) translateY(200px)', opacity: '1'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/2+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/3+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/4+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(300px) translateY('+hei/5+100+'px)', opacity: '0'
+            transform: 'translateX(300px) translateY(300px)', opacity: '0'
             },
             {
-            transform: 'translateX(100px) translateY('+hei/3+100+'px)', opacity: '1'
+            transform: 'translateX(100px) translateY(300px)', opacity: '1'
             }];
     const options = {
           duration: 10000,
@@ -455,11 +438,9 @@
     $ufo.animate(keyframes,options)
     $ufo2.animate([
          {
-          transform: 'translateY('+hei/7+'px) translateX(-179px)',
           opacity: '0'
          },
          {
-          transform: 'translateY('+hei/7+'px) translateX(-179px)',
           opacity: '1'
          }
      ],{
@@ -474,11 +455,9 @@
 
     $meteoro2.animate([
          {
-          transform: 'translateY('+hei/2+'px) translateX(-295px)',
           backgroundPosition: '37px 0px'
          },
          {
-          transform: 'translateY('+hei/2+'px) translateX(-295px)',
           backgroundPosition: 'right'
          }
      ],{
