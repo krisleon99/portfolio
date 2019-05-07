@@ -1,6 +1,7 @@
 const $more = document.getElementById("more-gis");
 const $gis = document.getElementById("gis");
 const $less = document.getElementById("less-gis");
+
 function display(id, status){
   id.style.display = status;
 }
