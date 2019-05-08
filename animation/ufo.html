@@ -168,6 +168,27 @@
    transform: translateY(565px) translateX(-179px);
    opacity: 0;
 }
+.biker{
+  width: 50px;
+  height: 65px;
+  background-image: url('../img/sprints/biker.png');
+  animation-name: biker, driver;
+  animation-duration: 2s, 2s;
+  animation-timing-function: steps(21), linear;
+  animation-fill-mode: backwards;
+  opacity: 0;
+}
+.mini-ufo{
+  width:50px;
+  height: 50px;
+  background-image: url('../img/sprints/mini-UFO.png');
+  animation-name: mini-ufo, choke;
+  animation-duration: 911ms, 1200ms;
+  animation-delay: 0s, 1300ms;
+  animation-timing-function: steps(8), ease;
+  animation-iteration-count: infinite, 1;
+  transform: translateX(522px) translateY(320px);
+}
 .ufo{
     z-index: 999;
     width: 37px;
@@ -221,7 +242,47 @@
     box-shadow: inset 3px 3px 0 rgba(0, 0, 0, 0.2);
 
 }
-
+@keyframes biker{
+  from{
+    background-position-x: 57.63px;
+  }to{
+    background-position-x: right;
+  }
+}
+@keyframes mini-ufo{
+  from{
+    background-position-x: 60px;
+  }to{
+    background-position-x: right;
+  }
+}
+@keyframes driver{
+  0%{
+    opacity: 1;
+    transform: rotateY(180deg) translate(-80px, 380px);
+  }100%{
+    opacity: 1;
+    transform: rotateY(180deg) translate(-700px, 380px);
+  }
+}
+@keyframes choke{
+  0%{
+    opacity: 1;
+    transform: translateX(522px) translateY(320px);
+  }10%{
+    opacity: 1;
+    transform: translateX(542px) translateY(300px);
+  }30%{
+    opacity: 1;
+    transform: translateX(562px) translateY(250px);
+  }50%{
+    opacity: 1;
+    transform: translateX(592px) translateY(200px);
+  }100%{
+    opacity: 1;
+    transform: translateX(622px) translateY(200px);
+  }
+}
 @keyframes luna{
    from {
         transform: translateY(0) scale(1) rotate(0deg);
@@ -366,6 +427,8 @@
           <div class="meteorito meteorito9"></div>
           <div class="meteorito meteorito7"></div>
           <div class="meteorito meteorito8"></div>
+          <div class="biker"></div>
+          <div class="mini-ufo"></div>
     </div>
      <div class="col-1">
         <div class="ufo" id="ufo"></div>

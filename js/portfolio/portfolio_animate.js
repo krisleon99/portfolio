@@ -2,6 +2,73 @@ const $more = document.getElementById("more-gis");
 const $gis = document.getElementById("gis");
 const $less = document.getElementById("less-gis");
 
+const $leaflet = document.getElementById('leaflet');
+const $services = document.getElementById('servi-work');
+const $world = document.getElementById('world');
+const $desktop = document.getElementById('desktop');
+
+const keyframeLeaf = [{
+  transform: 'translateX(0px) translateY(0px) rotate(0deg)'
+},
+{
+  transform: 'translateX(-80px) translateY(-20px) rotate(70deg)'
+},
+{
+  transform: 'translateX(0px) translateY(0px) rotate(0deg)'
+},
+{
+  transform: 'translateX(100px) translateY(-20px) rotate(-20deg)'
+},
+{
+  transform: 'translateX(0px) translateY(0px) rotate(0deg)'
+}];
+const optionsLeaf = {
+  duration: 5000,
+  delay: 5000,
+  direction: 'alternate',
+  easing: 'ease-in-out',
+  fill: 'backwards',
+  iteration: 'infinite',
+  iterationStart: 0,
+  endDelay: 3000
+}
+const keyframeWorld = [{
+  transform: 'rotateY(0deg) skewy(0deg)'
+},
+{
+  transform: 'rotateY(180deg) skewy(20deg)'
+}];
+const keyframeDesktop = [{
+  transform: 'translateY(0) rotateZ(0deg)'
+},
+{
+  transform: 'translateY(50px) rotateZ(45deg)'
+}];
+const optionsDesktop = {
+  duration: 5000,
+  delay: 3000,
+  direction: 'alternate',
+  easing: 'ease',
+  fill: 'backwards',
+  iterationStart: 0,
+  endDelay: 300
+}
+const optionsWorld = {
+  duration: 5000,
+  delay: 4000,
+  direction: 'normal',
+  easing: 'linear',
+  fill: 'backwards',
+  iterationStart: 0,
+  endDelay: 3000,
+}
+
+$services.addEventListener("click", (event) =>{
+  $leaflet.animate(keyframeLeaf, optionsLeaf)
+  $world.animate(keyframeWorld, optionsWorld)
+  $desktop.animate(keyframeDesktop, optionsDesktop)
+});
+
 function display(id, status){
   id.style.display = status;
 }
