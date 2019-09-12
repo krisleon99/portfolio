@@ -1,747 +1,527 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Welcome | Christian León Álvarez</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio - Christian León Álvarez">
-  <meta property="og:url"                content="https://krisleon99.github.io/portfolio/" />
-  <meta property="og:type"               content="article" />
-  <meta property="og:title"              content="Portfolio - Christian León Álvarez" />
-  <meta property="og:description"        content="Portfolio's Christian León" />
-  <meta property="og:image"              content="https://krisleon99.github.io/portfolio/img/sumaya.jpg" />
-
-  <!-- styles -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Ranga" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="css/prettyPhoto.css" rel="stylesheet">
-  <link href="font/stylesheet.css" rel="stylesheet">
-  <link href="css/animate.css" rel="stylesheet">
-  <link href="css/flexslider.css" rel="stylesheet">
-  <link rel="stylesheet" media="screen" href="css/sequencejs.css">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="color/default.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Fav and touch icons logo_icon-->
-  <link rel="shortcut icon" href="ico/logo_icon.ico">
-  <script src="d3.v3.min.js"></script>
-  <style>
-
-  rect {
-    fill: none;
-    pointer-events: all;
-  }
-
-  circle {
-    fill: none;
-    stroke-width: 2.5px;
-  }
-  #featured{
-    position: relative;
-  }
-  #sequence-theme{
-    position: absolute;
-    top: 150px;
-    width: 100% !important;
-  }
-  #d3{
-    position: relative;
-    z-index: 1;
-  }
-  </style>
-</head>
-
-<body>
-
-  <header>
-
-    <!-- start top -->
-    <div id="topnav" class="navbar navbar-fixed-top default">
-      <div class="navbar-inner">
-        <div class="container">
-          <div class="logo">
-            <a class="brand" href="index.html">Christian León</a>
-          </div>
-          <div class="navigation">
-            <nav>
-              <ul class="nav pull-right">
-                <li class="current"><a href="#featured">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Works</a></li>
-                <li><a href="#works">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-    <!-- end top -->
-  </header>
-
-  <!-- section featured -->
-  <section id="featured">
-    <div id="d3"></div>
-    <!-- sequence slider -->
-    <div id="sequence-theme">
-      <img class="prev" src="img/bt-prev.png" alt="Previous">
-      <img class="next" src="img/bt-next.png" alt="Next">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/portfolio_animate.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Welcome | Christian León Álvarez</title>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="57">
+    <!-- Header -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div id="sequence">
-              <ul>
-                <li class="animate-in">
-                  <div class="info letter-container2">
-                    <h2 class="fade">Christian León Álvarez</h2>
-                  </div>
-                  <h4 class="subtitle">Web Developer GIS</h4>
-                  <div class="bottomup">
-                    <img src="img/slider/parallax/sumaya_gimp.png" alt="">
-                  </div>
-                </li>
-                <li class="animate-in">
-                  <div class="info letter-container">
-                    <h2 class="fade">GIS</h2>
-                  </div>
-                  <h4 class="subtitle">Engineering in Information and Communication Technologies</h4>
-                  <div class="lefttop">
-                    <img src="img/slider/parallax/gis2.png" width="500px" height="500px" alt="">
-                  </div>
-                </li>
-                <!--
-                <li class="animate-in">
-                  <div class="info letter-container">
-                    <h2 class="fade">Experience</h2>
-                  </div>
-                  <h4 class="subtitle">With latest technology.</h4>
-                  <div class="righttop">
-                    <img src="img/slider/parallax/img-3.png" alt="">
-                  </div>
-                </li>-->
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end sequence slider -->
-  </section>
-  <!-- end featured -->
+        <a class="navbar-brand" href="#">
+          Christian León
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- Section about -->
-  <section id="about" class="section">
-    <div class="gray-shadow">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="headline">
-            <h3><span>About me</span></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="section-intro">
-             <p>
-              I am a person eager for knowledge, who always wants to be in the vanguard. I love reading Robert T. Kiyosaki; just like the extreme adventures.
-              </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span6">
-          <div class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="img/slider/flexslider/img-4.png" alt="">
-              </li>
-              <li>
-                <img src="img/slider/flexslider/img-2.png" alt="">
-              </li>
-              <li>
-                <img src="img/slider/flexslider/img-3.png" alt="">
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="span6">
-          <h3>Who I am</h3>
-          <p>
-              <p>
-              I'm a Web Developer at CentroGeo, I did a certificate in geomatics and I use my knowledge to analyze data and visualize them with the help of interactive maps.
-              </p>
-              <p>
-               My goal is to grow personally and professionally until I have the chance to help improve the quality of life of people through technologies and geomatics.
-             </p>
-            <p>
-              <div class="dotted_line"></div>
-              <h4>Expertise areas</h4>
-              <label>Python/Django:</label>
-              <div class="progress progress-striped progress-info active">
-                <div class="bar bar90">
-                </div>
-              </div>
-                <label>Java/Javascript :</label>
-              <div class="progress progress-striped progress-warning active">
-                <div class="bar bar90">
-                </div>
-              </div>
- 	            	<label>HTML5/CSS :</label>
-              <div class="progress progress-striped progress-success active">
-                <div class="bar bar80">
-                </div>
-              </div>
-
-
-              <label>PostgresSQL/SQL:</label>
-              <div class="progress progress-striped progress-info active">
-                <div class="bar bar70">
-                </div>
-              </div>
- 	      <label>JQuery/D3 :</label>
-              <div class="progress progress-striped progress-warning active">
-                <div class="bar bar60">
-                </div>
-              </div>
-              <label>Leaflet :</label>
-              <div class="progress progress-striped progress-danger active">
-                <div class="bar bar60">
-                </div>
-              </div>
-              <label>PHP/ZendFramework :</label>
-              <div class="progress progress-striped progress-success active">
-                <div class="bar bar40">
-                </div>
-              </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end section about -->
-
-  <!-- section services -->
-  <section id="services" class="section parallax">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="headline">
-            <h3><span>Works</span></h3>
-          </div>
-        </div>
-        <div class="span12">
-          <div class="section-intro">
-            <p>What I've done</p>
-            <p>
-              I have been a Web Developer at CentroGeo by four years.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span3">
-          <div class="well box aligncenter">
-            <i class="icon-circled active icon-48 icon-leaf"></i>
-            <h3> GIS</h3>
-            <p>
-              Most of my web experience is with interactive maps created in Leaflet.
-            </p>
-            <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color">Learn more</a>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="well box aligncenter">
-            <i class="icon-circled icon-48 icon-desktop"></i>
-            <h3>Desktop aplication</h3>
-            <p>
-              desktop aplications I developed in Java.
-            </p>
-            <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color">Learn more</a>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="well box aligncenter">
-            <i class="icon-circled icon-48 icon-globe"></i>
-            <h3>Web application</h3>
-            <p>
-              Python/Django, GWT/Java and PHP/ZendFramework.
-            </p>
-            <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color">Learn more</a>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="well box aligncenter">
-            <i class="icon-circled icon-48 icon-cloud"></i>
-            <h3>BD</h3>
-            <p>
-              Postgres, Postgis (for the geospatial database), SQL and CastorDB.
-            </p>
-            <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color">Learn more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end section services -->
-
-  <!-- section works -->
-  <section id="works" class="section gray-bg">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="headline">
-            <h3><span>Certificates</span></h3>
-          </div>
-        </div>
-        <div class="span12">
-          <div class="section-intro">
-            <p>
-              Certificates issued by plattzy.
-            </p>
-          </div>
-        </div>
-        <div class="span12">
-          <ul class="filter">
-            <li class="all active"><a href="#" class="btn btn-color">All categories</a></li>
-            <li class="programming"><a href="#" class="btn btn-color">Backend</a></li>
-       	    <li class="front"><a href="#" class="btn btn-color">Frontend</a></li>
-             <li class="so"><a href="#" class="btn btn-color">Others</a></li>
-      	    <li class="dev"><a href="#" class="btn btn-color">DevOps</a></li>
-          <li class="english"><a href="#" class="btn btn-color">English</a></li>
-  <!--
-            <li class="bd"><a href="#" class="btn btn-color">BD</a></li>
-            <li class="so"><a href="#" class="btn btn-color">SO</a></li>
-            <li class="personal"><a href="#" class="btn btn-color">Personal</a></li>-->
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services" id="servi-work">Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#works">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-k" href="#contact">Contact</a>
+            </li>
           </ul>
-          <div class="row">
-            <ul class="portfolio-area">
-              <li class="portfolio-item2" data-id="id-0" data-type="programming">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/diploma_java.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Java SE</h5>
-                    <span class="folio-link">
-									<a href="img/portfolio/big.jpg" data-pretty="prettyPhoto" title="zoom">
-									<a href="https://platzi.com/@kris99/curso/1222-java-basico/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
- <li class="portfolio-item2" data-id="id-0" data-type="programming">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/python.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Python</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1104-python-2017/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-<li class="portfolio-item2" data-id="id-0" data-type="programming">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/potgresql.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Postgresql</h5>
-                    <span class="folio-link">
-									<a href="img/portfolio/big.jpg" data-pretty="prettyPhoto" title="zoom">
-									<a href="https://platzi.com/@kris99/curso/100-postgresql/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-              <li class="portfolio-item2" data-id="id-0" data-type="dev">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/github.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>GIT Y GITHUB</h5>
-                    <span class="folio-link">
-									<a href="img/portfolio/big.jpg" data-pretty="prettyPhoto" title="zoom">
-									<a href="https://platzi.com/@kris99/curso/1170-git-github/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
- <li class="portfolio-item2" data-id="id-0" data-type="dev">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/command_line.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Command line</h5>
-                    <span class="folio-link">
-		<a href="img/portfolio/big.jpg" data-pretty="prettyPhoto" title="zoom">
-			<a href="https://platzi.com/@kris99/curso/1276-terminal/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-<li class="portfolio-item2" data-id="id-0" data-type="so">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/software.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Software enginnering</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1098-ingenieria/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-              <li class="portfolio-item2" data-id="id-0" data-type="so">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/marca_personal.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Personal Mark</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1220-marca-personal/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-              <li class="portfolio-item2" data-id="id-0" data-type="english">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/ingles_tec.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Technical english</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1188-ingles/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-              <li class="portfolio-item2" data-id="id-0" data-type="english">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/ingles_basic.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Basic english</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1358-ingles-basico/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-  <li class="portfolio-item2" data-id="id-0" data-type="english">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/gramar.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Basic english conversation</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1370-ingles-gramatica/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
- <li class="portfolio-item2" data-id="id-0" data-type="english">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/conversacion.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Basic english grammar</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1371-ingles-conversacion/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-               <li class="portfolio-item2" data-id="id-0" data-type="english">
-                    <div class="thumb-wrapp">
-                      <img src="img/portfolio/intermedio.png" class="folio-image" alt="">
-                      <div class="folio-caption">
-                        <h5>Medium english</h5>
-                        <span class="folio-link">
-                      <a href="https://platzi.com/@kris99/curso/1500-ingles-2/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-                      </span>
-                      </div>
-                    </div>
-              </li>
-  <li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/html.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>HTML5</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1350-html5-css3/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-  <li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/css.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>CSS</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1229-css-grid-layout/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
- <li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/responsive.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Responsive Design</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1362-responsive-design/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
- <li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/bootstrap.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>Bootstrap</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/bootstrap/diploma/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-<li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/js.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>JavaScript</h5>
-                    <span class="folio-link">
-									<a href="https://platzi.com/@kris99/curso/1339-fundamentos-javascript/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-									</span>
-                  </div>
-                </div>
-              </li>
-              <li class="portfolio-item2" data-id="id-0" data-type="front">
-                <div class="thumb-wrapp">
-                  <img src="img/portfolio/js_vanilla.png" class="folio-image" alt="">
-                  <div class="folio-caption">
-                    <h5>jQuery a JavaScript</h5>
-                    <span class="folio-link">
-                  <a href="https://platzi.com/@kris99/curso/1316-jquery-js/diploma/detalle/"><i class="icon-rounded  icon-32 icon-link"></i></a>
-                  </span>
-                  </div>
-                </div>
-              </li>
-
-            </ul>
-          </div>
         </div>
       </div>
+    </nav>
+    <!-- /Header -->
+<section id="home">
+    <div class="container2">
+    <div class="content">
+      <h1>Christian León Álvarez</h1>
+      <p>Web Developer GIS</p>
     </div>
-  </section>
-  <!-- section works -->
-
-  <!-- section contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="headline">
-            <h3><span>Contact me</span></h3>
-          </div>
-        </div>
-        <div class="span12">
-          <div class="section-intro">
-            <p>
-              Feel free to ask if you have any question regarding my services or if you just want to say Hello, I would love to hear from you.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12">
-          <p>
-            <span><i class="icon-envelope-alt"></i> <strong>Email:</strong> christian.leon.alvarez@gmail.com</span>
-          </p>
-        </div>
-      </div>
+    <div class="waves">
+      <div class="wave circulo a"></div>
+      <div class="wave circulo b"></div>
+      <div class="wave circulo c"></div>
     </div>
-  </section>
-  <!-- end section contact -->
+  </div>
+</section>
+    <!-- /Main -->
 
-
-  <footer>
-    <div class="verybottom">
+    <!-- about -->
+    <section id="about" class="mt-4">
       <div class="container">
         <div class="row">
-          <div class="span12">
-            <div class="aligncenter">
-              <div class="logo">
-								<p>Contact me</p>
-              </div>
-              <div class="social-links">
-                <ul class="social-links">
-                  <li><a href="https://twitter.com/kris_leon99" title="Twitter"><i class="icon-circled icon-64 icon-twitter"></i></a></li>
-                  <li><a href="https://www.facebook.com/Christian-Le%C3%B3n-Alvarez-266549357331507/" title="Facebook"><i class="icon-circled icon-64 icon-facebook"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/christian-le%C3%B3n-%C3%A1lvarez-b4912674/" title="Linkedin"><i class="icon-circled icon-64 icon-linkedin"></i></a></li>
-                </ul>
-
-              </div>
-
-              <p>
-                &copy; 2018. All Rights Reserved. Christian León.
-              </p>
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Selecao
-
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+          <div class="col text-center text-uppercase">
+            <h2>About me</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="img/NorthCorolina.png" alt="Foto de Christian">
+              <div class="card-body">
+                <div class="badges">
+                  <span class="badge badge-warning">JavaScript</span>
+                  <span class="badge badge-info">Leaflet</span>
+                  <span class="badge badge-secondary">Phyton</span>
+                  <span class="badge badge-danger">Data science</span>
+                </div>
+                <h5 class="card-title">Chrisian León</h5>
+                <p class="card-text">I am a person eager for knowledge, who always wants to be in the vanguard. I love reading Robert T. Kiyosaki; just like the extreme adventures.</p>
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /about -->
+
+    <!-- Works -->
+  <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 pt-12 pb-4">
+            <small>What I've done</small>
+            <h2>
+              I have been a Web Developer at CentroGeo by five years.
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="icon" id="leaflet">
+                   <i class="fa fa-leaf fa-5x"></i>
+                </div>
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning">JavaScript</span>
+                    <span class="badge badge-info">Leaflet</span>
+                    <span class="badge badge-secondary">Postgres/Postgis</span>
+                    <span class="badge badge-danger">Geonode</span>
+                  </div>
+                  <h5 class="card-title">GIS</h5></h5>
+                  <p class="card-text">
+                    Data visualization is the presentation of data graphs,
+                    maps, and other visual mediums.
+                    It allows decision makers to see analytics <span class="more" id="more-gis">more</span> <span class="less" id="less-gis">less</span>
+                    <div class="hide" id="gis">
+                       so they can
+                      grasp complex concepts and connect
+                       the dots to find new patterns.
+                      Most of my web experience is with interactive maps created in Leaflet.</p>
+                      One of my projects: <a href="http://istmo.centrogeo.org.mx/apps/farming/">Producción Agrícola </a>
+                  </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="icon" id="world">
+                   <i class="fa fa-globe fa-5x"></i>
+                </div>
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning">Python/Django</span>
+                    <span class="badge badge-info">GWT/Java</span>
+                    <span class="badge badge-secondary">PHP/ZendFramework</span>
+                  </div>
+                  <h5 class="card-title">Web application</h5>
+                  <p class="card-text">
+                    I developed web aplication
+                  </p>
+                  <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color" target="_blank">Learn more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="icon" id="desktop">
+                   <i class="fa fa-desktop fa-5x"></i>
+                </div>
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning">Java</span>
+                    <span class="badge badge-info">CastorDB</span>
+                    <span class="badge badge-secondary">SQL</span>
+                  </div>
+                  <h5 class="card-title">Desktop aplication</h5>
+                  <p class="card-text">
+                    desktop aplications I developed in Java.
+                  </p>
+                  <a href="https://www.cakeresume.com/s--CQcEvJrmrJ1jM5eo-dhj-g--/christian-cd69e5" class="btn btn-color" target="_blank">Learn more</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+    <!-- /Works -->
+
+    <!-- certificates -->
+    <section id="works" class="pt-3 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col text-uppercase text-center">
+            <small>Certificates</small>
+            <h2>Certificates issued by platzi</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 col-md-2 col-lg-2 mb-4">
+            <div class="btn btn-k frontend" id="frontend">Frontend</div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2 mb-4">
+            <div class="btn btn-k backend" id="backend">Backend</div>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2 mb-4">
+            <div class="btn btn-k DevOps" id="DevOps">DevOps</div>
+          </div>
+          <div class="col-33 col-md-2 col-lg-2 mb-4">
+            <div class="btn btn-k english" id="english">English</div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/html.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">HTML5</span><a href="https://platzi.com/@kris99/curso/1350-html5-css3/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/css.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">CSS</span>
+                    <a href="https://platzi.com/@kris99/curso/1229-css-grid-layout/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/responsive.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">Responsive Design</span>
+                    <a href="https://platzi.com/@kris99/curso/1362-responsive-design/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/bootstrap.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">Bootstrap</span>
+                    <a href="https://platzi.com/@kris99/curso/bootstrap/diploma/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/animation.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">Animation</span>
+                    <a href="https://platzi.com/@kris99/curso/1103-animaciones-web/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/js.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">JavaScript</span>
+                    <a href="https://platzi.com/@kris99/curso/1339-fundamentos-javascript/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 front-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/js_vanilla.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave fr">jQuery a JavaScript</span>
+                    <a href="https://platzi.com/@kris99/curso/1316-jquery-js/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-4 english-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/ingles_tec.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave en">Technical english</span>
+                    <a href="https://platzi.com/@kris99/curso/1188-ingles/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 english-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/ingles_basic.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave en">Basic english</span>
+                    <a href="https://platzi.com/@kris99/curso/1358-ingles-basico/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 english-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/gramar.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave en">Basic english conversation</span>
+                    <a href="https://platzi.com/@kris99/curso/1370-ingles-gramatica/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 english-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/conversacion.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave en">Basic english grammar</span>
+                    <a href="https://platzi.com/@kris99/curso/1371-ingles-conversacion/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 english-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/intermedio.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave en">Medium english</span>
+                    <a href="https://platzi.com/@kris99/curso/1500-ingles-2/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-4 back-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/diploma_java.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave bc">Java SE</span>
+                    <a href="https://platzi.com/@kris99/curso/1222-java-basico/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 back-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/python.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave bc">Python</span>
+                    <a href="https://platzi.com/@kris99/curso/1104-python-2017/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 back-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/potgresql.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave bc">Postgresql</span>
+                    <a href="https://platzi.com/@kris99/curso/100-postgresql/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 mb-4 dev-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/github.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave dev">GIT Y GITHUB</span>
+                    <a href="https://platzi.com/@kris99/curso/1170-git-github/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 dev-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/command_line.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave dev">Command line</span>
+                    <a href="https://platzi.com/@kris99/curso/1276-terminal/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 dev-selector">
+              <div class="card">
+                <img class="card-img-top" src="img/portfolio/software.png" class="folio-image" alt="">
+                <div class="card-body">
+                  <div class="badges">
+                    <span class="badge badge-warning bwave dev">Software enginnering</span>
+                    <a href="https://platzi.com/@kris99/curso/1098-ingenieria/diploma/detalle/">
+                      <i class="fa fa-link fa-1x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /certificates -->
+    <!-- section contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+              <h3><span>Contact me</span></h3>
+            </div>
+              <h4 <div class="col-12 mb-4">
+                Feel free to ask if you have any question regarding my services or if you just want to say Hello, I would love to hear from you.
+              </h4>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+              <span><i class="icon-envelope-alt"></i> <strong>Email:</strong> christian.leon.alvarez@gmail.com</span>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section contact -->
+
+    <!-- Footer -->
+    <footer id="footer" class="pb-4 pt-4">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-6 col-md-4 col-lg-4 mb-4">
+            <a href="https://twitter.com/kris_leon99" target="_blank" title="Twitter">
+              <i class="fa fa-twitter fa-4x"></i>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4 mb-4">
+            <a href="https://www.facebook.com/Christian-Le%C3%B3n-Alvarez-266549357331507/" target="_blank" title="Facebook">
+              <i class="fa fa-facebook fa-4x"></i>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4 mb-4">
+            <a href="https://www.linkedin.com/in/christian-le%C3%B3n-%C3%A1lvarez-b4912674/" target="_blank" title="Linkedin">
+              <i class="fa fa-linkedin fa-4x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Comprar tickets</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-warning" role="alert">
+              Recibirás un correo de confirmación si sales sorteado
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-k">Comprar</button>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+    <!-- /Modal -->
 
-  <!-- Javascript Library Files -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.easing.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/jquery.lettering.js"></script>
-  <script src="js/parallax/jquery.parallax-1.1.3.js"></script>
-  <script src="js/nagging-menu.js"></script>
-  <script src="js/sequence.jquery-min.js"></script>
-  <script src="js/sequencejs-options.sliding-horizontal-parallax.js"></script>
-  <script src="js/portfolio/jquery.quicksand.js"></script>
-  <script src="js/portfolio/setting.js"></script>
-  <script src="js/jquery.scrollTo.js"></script>
-  <script src="js/jquery.nav.js"></script>
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/prettyPhoto/jquery.prettyPhoto.js"></script>
-  <script src="js/prettyPhoto/setting.js"></script>
-  <script src="js/jquery.flexslider.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Custom Javascript File -->
-  <script src="js/custom.js"></script>
-    <script src="js/d3.v3.min.js"></script>
-  <script>
-  var w = window.innerWidth;
-  var h = window.innerHeight;
-  doD3(w-20, h+50);
-  // let screen_1 = 1024,
-  //     screen_2 = 768,
-  //     screen_3 = 480,
-  //     screen_4 = 320,
-  //     screen_5 = 1024;
-  // const media1 = window.matchMedia('screen and (max-width: '+screen_1+'px)');
-  // const media2 = window.matchMedia('screen and (max-width: '+screen_2+'px)');
-  // const media3 = window.matchMedia('screen and (max-width: '+screen_3+'px)');
-  // const media4 = window.matchMedia('screen and (max-width: '+screen_4+'px)');
-  // const media5 = window.matchMedia('screen and (max-width: '+screen_5+'px)');
-  //
-  // console.log("ipad");
-  // media1.addListener(validate1)
-  // media2.addListener(validate2)
-  // media3.addListener(validate3)
-  // media4.addListener(validate4)
-  // media5.addListener(validate1)
-
-  function validate1(event){
-    if (event.matches) {
-      console.log("matches");
-      var width = 1024,
-      height = 950;
-    }else {
-      console.log("no matches");
-      var width = 1800,
-      height = 950;
-    }
-    console.log(event);
-    console.log("event");
-    doD3(width, height);
-  }
-  function validate2(event){
-    if (event.matches) {
-      console.log("matches");
-      var width = 768,
-      height = 950;
-    }else {
-      console.log("no matches");
-      var width = 1800,
-      height = 950;
-    }
-    console.log(event);
-    console.log("event");
-    doD3(width, height);
-  }
- function validate3(event){
-      if (event.matches) {
-        console.log("matches");
-        var width = 480,
-        height = 950;
-      }else {
-        console.log("no matches");
-        var width = 1800,
-        height = 950;
-      }
-      console.log(event);
-      console.log("event");
-      doD3(width, height);
-    }
-    function validate4(event){
-      if (event.matches) {
-        console.log("matches");
-        var width = 320,
-        height = 950;
-      }else {
-        console.log("no matches");
-        var width = 1800,
-        height = 950;
-      }
-      console.log(event);
-      console.log("event");
-      doD3(width, height);
-    }
-
-function doD3(width, height){
-  console.log(width+"j"+height);
-  var i = 0;
-
-  var svg = d3.select("#d3").append("svg")
-  .attr("width", width)
-  .attr("height", height);
-
-  svg.append("rect")
-  .attr("width", width)
-  .attr("height", height)
-  .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
-  function particle() {
-  var m = d3.mouse(this);
-
-  svg.insert("circle", "rect")
-    .attr("cx", m[0])
-    .attr("cy", m[1])
-    .attr("r", 1e-6)
-    .style("stroke", d3.hsl((i = (i + 1) % 360), 1, .5))
-    .style("stroke-opacity", 1)
-  .transition()
-    .duration(2000)
-    .ease(Math.sqrt)
-    .attr("r", 100)
-    .style("stroke-opacity", 1e-6)
-    .text("hola")
-    .remove();
-
-  d3.event.preventDefault();
-  }
-}
-
-
-
-  </script>
-
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/portfolio/portfolio_animate.js"></script>
+  </body>
 </html>
